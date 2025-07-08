@@ -55,7 +55,15 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
 - Retry decorators for API and DB operations (up to 3 attempts).
 - Structured logging for all major steps.
 
----
 
-## Folder Structure
+Dependencies
+Python 3.8+
+pandas
+Flask
+SQLAlchemy
+psycopg2
+requests
+tenacity
+PyYAML
+APScheduler
 
