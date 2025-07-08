@@ -1,0 +1,4 @@
+[
+  {"user_id": 1, "username": "greeshma", "email": "greeshma@example.com", "active": true},
+  {"user_id": 2, "username": "rahul", "email": "rahul@example.com", "active": false}
+]

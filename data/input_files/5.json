@@ -1,0 +1,4 @@
+[
+  {"txn_id": "T1001", "user": "alice", "amount": 1000, "status": "success"},
+  {"txn_id": "T1002", "user": "bob", "amount": 500, "status": "failed"}
+]

@@ -1,0 +1,30 @@
+4. YAML Upload & Parse (Frontend + Backend)
+📁 Implement a file upload form (Angular).
+
+Backend should parse and validate YAML, then store the content or replace current config.
+
+
+6. Angular CLI Frontend Dashboard
+🧩 Design UI with cards/pages for:
+
+Upload/view YAML
+
+Trigger job
+
+View logs
+
+View config versions
+
+View schedule status
+
+7. Unit Testing
+✅ After finalizing core modules, write pytest unit tests for:
+
+YAML parser
+
+extract functions
+
+load function
+
+scheduler trigger
+
