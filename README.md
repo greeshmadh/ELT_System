@@ -57,13 +57,23 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
 
 
 Dependencies
+
 Python 3.8+
+
 pandas
+
 Flask
+
 SQLAlchemy
+
 psycopg2
+
 requests
+
 tenacity
+
 PyYAML
+
 APScheduler
+
 
