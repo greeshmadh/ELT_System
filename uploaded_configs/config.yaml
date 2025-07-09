@@ -14,4 +14,4 @@ target:
   database: "elt_db"
   user: "elt_user"
   password: "elt_password"
-  table: "raw_data"
+  table: "raw_data2_wo_schema"
