@@ -1,11 +1,13 @@
 main point - logging
+
 try - realtime and cloud platform
 try sfpt real 
+
+backend:-
 admin has more privilagfes than user
-schedular must run even when laptop swutch off
+schedular must run even when laptop switch off
 INCLUDE AUTHENTICATION 
 coverage report of the project backend in the frontend it should show
-schema should check from csv and create table 
 if new data added should check continously n integrate
 README file
 
@@ -14,3 +16,4 @@ README file
 DONE !!!
 api and normal both extract with/without schema in yaml  
 Standardized usable CSV creation and Validation - schema check 
+schema should check from csv and create table 

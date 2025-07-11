@@ -1,0 +1,2 @@
+1. Automatic reading when any files updated proablem i faced was that whole elt process would trigger for all input files resulting in duplicate data. 
+2.
