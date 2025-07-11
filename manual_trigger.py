@@ -50,6 +50,7 @@
 from flask import Flask, jsonify
 from extract import run_extraction, read_yaml_config
 from loader import load_csv_to_postgres
+from config_manager import upload_if_new_config
 import logging
 import os
 import pandas as pd
@@ -59,8 +60,8 @@ import hashlib
 
 app = Flask(__name__)
 
-CONFIG_PATH = "./uploaded_configs/config.yaml"
-CSV_PATH = "./data/output_files/extracted_data.csv"
+CONFIG_PATH = "./uploaded_configs/testing.yaml"
+CSV_PATH = "./data/output_files/testing.csv"
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
@@ -114,6 +115,9 @@ def background_watcher(config):
 def trigger_elt_job():
     try:
         logging.info("Manual ELT job trigger initiated...")
+        # Step 0: Store config if new
+        status_msg = upload_if_new_config(CONFIG_PATH)
+        logging.info(status_msg)
 
         config = read_yaml_config(CONFIG_PATH)
 
@@ -124,7 +128,7 @@ def trigger_elt_job():
         thread = threading.Thread(target=background_watcher, args=(config,))
         thread.daemon = True
         thread.start()
-
+        logging.info("Checking for new files every 1 min.")
         return jsonify({"message": "ELT job started and background watcher running."}), 200
 
     except Exception as e:

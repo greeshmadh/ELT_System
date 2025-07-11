@@ -17,6 +17,8 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
 - **Local Extraction**: Supports reading `.csv`, `.json`, and `.txt` files from a specified folder.
 - **API Extraction**: Fetches JSON data from an API endpoint using optional authentication tokens.
 - **Combined Output**: All extracted data is concatenated into one DataFrame and written to CSV.
+- Automatically re-extracts all files on change detection during monitoring.
+
 
 ### 2. **YAML Configuration**
 - Configuration is managed through a `config.yaml` file.
@@ -34,6 +36,8 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
 - Table is created automatically if it doesn’t exist.
 - Appends data to the specified target table.
 - Supports retry mechanism for fault-tolerance.
+- Only new rows are inserted using a row-level hash to prevent duplicates.
+
 
 ### 5. **YAML Upload and Versioning**
 - Endpoint: `POST /upload-config`
@@ -41,10 +45,20 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
 - Automatically increments version number.
 - Validates YAML syntax before storing.
 
-### 6. **Manual ELT Trigger**
+### 6. **Manual ELT Trigger with Continuous Monitoring**
 - Endpoint: `POST /trigger-job`
-- Triggers the full ELT pipeline (extract → validate → load).
-- Logs all operations and errors.
+- Triggers the full ELT pipeline:
+  - Extracts all current files.
+  - Validates and standardizes based on schema (if provided).
+  - Overwrites CSV output.
+  - Loads all rows to PostgreSQL (creating table if necessary).
+- Then continuously monitors the input folder every 1 minute:
+  - If new or modified files are detected:
+    - Overwrites the CSV with fresh combined data.
+    - Detects and loads only **new, previously unseen rows** to the database.
+- Uses a background thread to perform this monitoring.
+- Deduplicates rows using a secure hash mechanism to avoid repeated inserts.
+
 
 ### 7. **Scheduled ELT Job**
 - Endpoint: `POST /schedule-job`
@@ -75,5 +89,10 @@ tenacity
 PyYAML
 
 APScheduler
+
+watchdog
+
+hashlib (built-in)
+
 
 

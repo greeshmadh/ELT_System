@@ -62,3 +62,36 @@ def upload_config():
 
 if __name__ == "__main__":
     app.run(port=5055)
+
+
+# Add at the bottom of config_manager.py
+def upload_if_new_config(yaml_path):
+    with open(yaml_path, 'r') as f:
+        new_content = f.read()
+        parsed_yaml = yaml.safe_load(new_content)  # validate syntax
+
+    engine = create_engine('postgresql://elt_user:elt_password@localhost:5432/elt_db')
+    metadata = MetaData()
+    config_history = Table('config_history', metadata,
+        Column('id', Integer, primary_key=True),
+        Column('version', Integer),
+        Column('timestamp', DateTime),
+        Column('yaml_content', Text)
+    )
+    metadata.create_all(engine)
+
+    with engine.begin() as conn:
+        existing_versions = conn.execute(config_history.select().order_by(config_history.c.version.desc())).fetchall()
+        for row in existing_versions:
+            if row.yaml_content.strip() == new_content.strip():
+                return f"Config already exists as version {row.version}"
+
+        next_version = (existing_versions[0].version + 1) if existing_versions else 1
+
+        conn.execute(config_history.insert().values(
+            version=next_version,
+            timestamp=datetime.datetime.now(),
+            yaml_content=new_content
+        ))
+
+    return f"New config stored as version {next_version}"

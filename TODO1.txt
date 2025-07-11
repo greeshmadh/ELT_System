@@ -8,12 +8,18 @@ admin has more privilagfes than user
 schedular must run even when laptop switch off
 INCLUDE AUTHENTICATION 
 coverage report of the project backend in the frontend it should show
-if new data added should check continously n integrate
 README file
+retry 
+unit testing
 
+frontend:-
+dashboard - check doc 
+logs should be shown live 
 
 
 DONE !!!
 api and normal both extract with/without schema in yaml  
 Standardized usable CSV creation and Validation - schema check 
-schema should check from csv and create table 
+schema should check from csv and create table
+if new data added should check continously n integrate 
+config_history

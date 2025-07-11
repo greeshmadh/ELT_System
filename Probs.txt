@@ -1,2 +1,10 @@
+PROBS I FACED:- 
 1. Automatic reading when any files updated proablem i faced was that whole elt process would trigger for all input files resulting in duplicate data. 
+2. 
+
+
+EXCEPTIONS IN PROJ:-
+1. If same db used for another job run then its not rewritten but data is just added ( so if same job is called twice then 
+data is repeated as initial data is written wo checking for same dat ain db or no). If only ran once the job then same data 
+is not repeated as CI makes sure that current job call no duplicates r entered. 
 2.
