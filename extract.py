@@ -101,8 +101,10 @@ def extract_from_api(url, auth_token=None, folder_param=None):
     return df
 
 # ---------- MAIN EXTRACTOR ----------
-def run_extraction(skip_api=False):
-    config = read_yaml_config(CONFIG_PATH)
+def run_extraction(config=None, output_csv_path=None, skip_api=False):
+    if config is None:
+        config = read_yaml_config(CONFIG_PATH)
+
     sources = config.get("sources", [])
     all_dataframes = []
 
@@ -139,13 +141,13 @@ def run_extraction(skip_api=False):
         if schema:
             validated_df = validate_and_standardize(final_df, schema,strict_mode)
             if validated_df is not None:
-                validated_path = os.path.join(OUTPUT_FOLDER, "extracted_data_std_schema.csv")
+                validated_path = output_csv_path or os.path.join(OUTPUT_FOLDER, "extracted_data_std_schema.csv")
                 validated_df.to_csv(validated_path, index=False)
                 logging.info("Validated and standardized CSV written to extracted_data_std_schema.csv")
             else:
                 logging.error("Schema validation failed. CSV not written.")
         else:
-            raw_path = os.path.join(OUTPUT_FOLDER, "extracted_data.csv")
+            raw_path = output_csv_path or os.path.join(OUTPUT_FOLDER, "extracted_data_std_schema.csv")
             final_df.to_csv(raw_path, index=False)
             logging.info(f"CSV written without schema validation to {raw_path}")
 
