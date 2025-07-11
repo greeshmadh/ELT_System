@@ -1,14 +1,17 @@
-emp_id,name,department,salary,product_id,price,in_stock,timestamp,sensor_id,temperature,humidity,customer_id,feedback,rating,txn_id,user,amount,status
-101.0,Alice,Engineering,75000.0,,,,,,,,,,,,,,
-102.0,Bob,HR,60000.0,,,,,,,,,,,,,,
-103.0,Charlie,Finance,68000.0,,,,,,,,,,,,,,
-,Laptop,,,P001,56000.0,True,,,,,,,,,,,
-,Mouse,,,P002,450.0,False,,,,,,,,,,,
-,,,,,,,2024-06-11T12:00:00,S1,23.4,45.0,,,,,,,
-,,,,,,,2024-06-11T12:05:00,S2,24.1,43.0,,,,,,,
-,,,,,,,2024-06-11T12:10:00,S1,22.8,46.0,,,,,,,
-,,,,,,,,,,,C001,Great service,5.0,,,,
-,,,,,,,,,,,C002,Average experience,3.0,,,,
-,,,,,,,,,,,C003,Not satisfied,2.0,,,,
-,,,,,,,,,,,,,,T1001,alice,1000.0,success
-,,,,,,,,,,,,,,T1002,bob,500.0,failed
+emp_id,name,department,salary,product_id,price,in_stock,timestamp,sensor_id,temperature,humidity,customer_id,feedback,rating,id,amount,role
+101.0,Alice,Engineering,75000.0,,,,,,,,,,,,,
+102.0,Bob,HR,60000.0,,,,,,,,,,,,,
+103.0,Charlie,Finance,68000.0,,,,,,,,,,,,,
+,Laptop,,,P001,56000.0,True,,,,,,,,,,
+,Mouse,,,P002,450.0,False,,,,,,,,,,
+,,,,,,,2024-06-11T12:00:00,S1,23.4,45.0,,,,,,
+,,,,,,,2024-06-11T12:05:00,S2,24.1,43.0,,,,,,
+,,,,,,,2024-06-11T12:10:00,S1,22.8,46.0,,,,,,
+,,,,,,,,,,,C001,Great service,5.0,,,
+,,,,,,,,,,,C002,Average experience,3.0,,,
+,,,,,,,,,,,C003,Not satisfied,2.0,,,
+,,,,,,,,,,,C004,Noooo,7.0,,,
+,alice,,,,,,,,,,,,,T1001,1000.0,success
+,bob,,,,,,,,,,,,,T1002,500.0,failed
+,charlie,,,,,,,,,,,,,T1003,750.0,success
+,david,,,,,,,,,,,,,T1004,300.0,failed

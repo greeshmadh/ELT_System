@@ -1,4 +1,6 @@
 [
-  {"txn_id": "T1001", "user": "alice", "amount": 1000, "status": "success"},
-  {"txn_id": "T1002", "user": "bob", "amount": 500, "status": "failed"}
+  {"id": "T1001", "name": "alice", "amount": 1000, "role": "success"},
+  {"id": "T1002", "name": "bob", "amount": 500, "role": "failed"},
+  {"id": "T1003", "name": "charlie", "amount": 750, "role": "success"},
+  {"id": "T1004", "name": "david", "amount": 300, "role": "failed"}
 ]

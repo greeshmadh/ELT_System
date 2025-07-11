@@ -1,6 +1,6 @@
 sources:
   - type: local
-    path: "./data/input_files_std_schema"
+    path: "./data/input_files"
 
   - type: api
     url: "http://localhost:5000/api/data"
@@ -14,7 +14,7 @@ target:
   database: "elt_db"
   user: "elt_user"
   password: "elt_password"
-  table: "Act1"
+  table: "config_w_schema_data_wo_schema"
 
 schema:
   columns:

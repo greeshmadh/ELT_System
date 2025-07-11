@@ -59,8 +59,8 @@ import hashlib
 
 app = Flask(__name__)
 
-CONFIG_PATH = "./uploaded_configs/config_std_schema.yaml"
-CSV_PATH = "./data/output_files/extracted_data_std_schema.csv"
+CONFIG_PATH = "./uploaded_configs/config.yaml"
+CSV_PATH = "./data/output_files/extracted_data.csv"
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
