@@ -7,4 +7,4 @@ EXCEPTIONS IN PROJ:-
 1. If same db used for another job run then its not rewritten but data is just added ( so if same job is called twice then 
 data is repeated as initial data is written wo checking for same dat ain db or no). If only ran once the job then same data 
 is not repeated as CI makes sure that current job call no duplicates r entered. 
-2.
+2.Schedule time is within when the laptop is on only. 

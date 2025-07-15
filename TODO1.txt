@@ -23,3 +23,4 @@ Standardized usable CSV creation and Validation - schema check
 schema should check from csv and create table
 if new data added should check continously n integrate 
 config_history
+scheduler

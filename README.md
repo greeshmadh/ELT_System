@@ -25,6 +25,10 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
 - Defines data sources (`local`, `api`) and target PostgreSQL DB credentials.
 - Optional `schema` section defines expected column names and types.
 - Supports `strict_mode` for schema validation.
+- You can optionally define:
+  - `start_time`: when the ELT job should start (format: `YYYY-MM-DD HH:MM`)
+  - `end_time`: when the job should stop (monitoring ends)
+
 
 ### 3. **Schema Validation**
 - If a schema is provided in the YAML, all incoming data is validated against it.
@@ -45,25 +49,29 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
 - Automatically increments version number.
 - Validates YAML syntax before storing.
 
-### 6. **Manual ELT Trigger with Continuous Monitoring**
-- Endpoint: `POST /trigger-job`
-- Triggers the full ELT pipeline:
-  - Extracts all current files.
-  - Validates and standardizes based on schema (if provided).
-  - Overwrites CSV output.
-  - Loads all rows to PostgreSQL (creating table if necessary).
-- Then continuously monitors the input folder every 1 minute:
-  - If new or modified files are detected:
-    - Overwrites the CSV with fresh combined data.
-    - Detects and loads only **new, previously unseen rows** to the database.
-- Uses a background thread to perform this monitoring.
-- Deduplicates rows using a secure hash mechanism to avoid repeated inserts.
+### 6. **Manual & Scheduled ELT Trigger with Monitoring**
+- Script: `manual_trigger.py`
+- Supports two modes:
+  1. **Manual Mode**: 
+     - Run directly with or without a config file:
+       ```bash
+       python manual_trigger.py
+       python manual_trigger.py ./uploaded_configs/my_config.yaml
+       ```
+     - Triggers the ELT job immediately.
+     - Starts background monitoring to check for file changes every 60 seconds.
+     - Press `g` + Enter in terminal to stop the job gracefully.
 
-
-### 7. **Scheduled ELT Job**
-- Endpoint: `POST /schedule-job`
-- Schedules the ELT job to run every hour using APScheduler.
-- Supports auto-replacement of existing scheduled jobs.
+  2. **Scheduled Mode (YAML-based)**:
+     - The same script reads `start_time` and `end_time` from YAML:
+       ```yaml
+       start_time: "2025-07-15 19:00"
+       end_time: "2025-07-15 19:15"
+       ```
+     - It waits until `start_time` to begin the ELT job.
+     - Stops automatically at `end_time`.
+- Deduplicates rows using row-level hashing.
+- Automatically overwrites CSV and loads only new data to the database.
 
 ### 8. **Logging and Retry**
 - Retry decorators for API and DB operations (up to 3 attempts).
