@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  templateUrl: './app.html',
+  styleUrls: ['./app.css'],
+  imports: [RouterOutlet]
+})
+export class AppComponent {
+  title = 'ELT App';
+}

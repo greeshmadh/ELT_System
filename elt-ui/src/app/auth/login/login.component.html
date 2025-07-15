@@ -1,0 +1,24 @@
+<!-- Optional Logo -->
+<img src="blacklogo.png" alt="UST Logo" class="logo" /> 
+
+<!-- Centered Page Title -->
+<h1 class="page-title">ELT Dashboard</h1>
+
+<!-- Login Form Box -->
+<div class="login-container">
+  <form (ngSubmit)="onLogin()">
+    <div class="input-group">
+      <span class="icon">👤</span>
+      <input [(ngModel)]="username" name="username" placeholder="Username" required />
+    </div>
+    <div class="input-group">
+      <span class="icon">🔒</span>
+      <input [(ngModel)]="password" name="password" type="password" placeholder="Password" required />
+    </div>
+    <div class="button-wrapper">
+      <button type="submit">Login</button>
+    </div>
+
+  </form>
+  <p *ngIf="error" class="error">{{ error }}</p>
+</div>

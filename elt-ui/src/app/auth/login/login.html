@@ -1,0 +1,13 @@
+<h2>Login</h2>
+<form (submit)="onLogin()">
+  <label>Token:</label>
+  <input [(ngModel)]="token" name="token" required />
+
+  <label>Role:</label>
+  <select [(ngModel)]="role" name="role">
+    <option value="user">User</option>
+    <option value="admin">Admin</option>
+  </select>
+
+  <button type="submit">Login</button>
+</form>

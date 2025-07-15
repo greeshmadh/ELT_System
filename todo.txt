@@ -17,6 +17,33 @@ View config versions
 
 View schedule status
 
+
+PLAN:-
+🧱 Phase 1: Backend Preparation
+ Expose new API: /config-history, /logs, /data-view
+
+ Add role-based checks in Flask (admin vs user)
+
+ Implement in-memory or DB-based user roles (via token)
+
+🎨 Phase 2: Angular Setup
+ Scaffold Angular app with routing + Material UI
+
+ Implement Google OAuth2 login
+
+ Build role-based dashboard layout
+
+🔧 Phase 3: Connect API
+ YAML Upload → /upload-config
+
+ Trigger job → /trigger-job
+
+ View logs via /logs
+
+ Fetch data via /data-view
+
+ Config viewer via /config-history
+
 7. Unit Testing
 ✅ After finalizing core modules, write pytest unit tests for:
 

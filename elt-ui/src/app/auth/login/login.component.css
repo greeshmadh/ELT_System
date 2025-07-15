@@ -1,0 +1,111 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0097AC 0%, #006E74 100%);
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Logo (optional) */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 60px;
+}
+
+/* Page title */
+.page-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Login container */
+.login-container {
+  width: 400px;
+  height: 400px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(20px); /* ✅ GLASS EFFECT */
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ Center children horizontally */
+}
+
+
+/* Input fields with icons */
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.input-group .icon {
+  background: #006E74;
+  color: white;
+  padding: 12px;
+  font-size: 1.2rem;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Submit button */
+button {
+  width: 60%; /* or a fixed width like 200px */
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #006E74;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+button:hover {
+  background-color: #006a70;
+}
+
+/* Error */
+.error {
+  color: #ff4444;
+  text-align: center;
+  margin-top: 10px;
+}

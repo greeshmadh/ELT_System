@@ -1,0 +1,26 @@
+GITHUB COMMANDS
+
+git status
+git add .
+git commit -m "Updated loader function for schema support"
+git push
+
+ANGULAR APP CREATE 
+npm install -g @angular/cli
+ng version
+ng new namefolder --routing --style=css
+cd namefolder
+ng generate module auth --route login --module app
+ng generate module admin --route admin --module app
+ng generate module user --route user --module app
+ng generate service auth/auth
+
+NOTE zone is necessary so yes 
+SSR is not 
+
+--creates a login folder with css html and ts file
+ng generate component auth/login
+
+
+--RUN file 
+ng serve
