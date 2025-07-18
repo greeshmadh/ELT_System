@@ -61,13 +61,35 @@ def get_config_history():
                 "id": row.id,
                 "version": row.version,
                 "timestamp": row.timestamp.strftime("%Y-%m-%d %H:%M"),
-                "yaml_preview": row.yaml_content[:100]  # just first 100 chars
+                "yaml_preview": row.yaml_content[:100]
             } for row in result]
 
         return jsonify({"configs": history})
-
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route('/config/<int:config_id>', methods=['GET'])
+@jwt_required()
+def get_single_config(config_id):
+    try:
+        engine = create_engine('postgresql://elt_user:elt_password@localhost:5432/elt_db')
+        metadata = MetaData()
+        config_history = Table('config_history', metadata, autoload_with=engine)
+
+        with engine.connect() as conn:
+            result = conn.execute(config_history.select().where(config_history.c.id == config_id)).fetchone()
+            if result:
+                return jsonify({
+                    "id": result.id,
+                    "version": result.version,
+                    "timestamp": result.timestamp.strftime("%Y-%m-%d %H:%M"),
+                    "yaml_content": result.yaml_content
+                })
+            else:
+                return jsonify({"error": "Config not found"}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 
 
 @app.route('/logs', methods=['GET'])

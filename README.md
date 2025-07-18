@@ -77,6 +77,55 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
 - Retry decorators for API and DB operations (up to 3 attempts).
 - Structured logging for all major steps.
 
+## 🔐 7. JWT Authentication
+
+- `/auth/login` issues JWT tokens for **admin** and **user** roles.
+- Protected endpoints use `@jwt_required()` decorator in Flask.
+- JWT token is sent with each request in the `Authorization: Bearer <token>` header.
+
+---
+
+## 🖥️ 9. Admin Dashboard (Angular Frontend)
+
+Provides a web-based UI to manage the ELT pipeline.
+
+### Features:
+
+- ✅ **Trigger ELT Job** by uploading a YAML configuration file.
+- 📄 **View Logs** – shows the latest 100 lines from `elt.log`.
+- 📜 **View Config Upload History** – shows versioned YAML uploads.
+- 🔐 Requires login via frontend using valid credentials.
+- 💾 Stores JWT securely in `localStorage` for authorized requests.
+
+---
+
+## 📄 10. Log Monitoring
+
+- **Endpoint**: `GET /logs`
+- Returns the **last 100 lines** from the ELT log file (`elt.log`).
+- Used in the frontend to show real-time monitoring (with auto-refresh every 5 seconds).
+- Log entries include:
+  - Timestamp
+  - ELT Job status
+  - Error messages
+
+---
+
+## 📝 11. YAML Upload History UI
+
+- View YAML configurations that have been uploaded and versioned.
+- Configs are stored in the `config_history` table in PostgreSQL.
+
+### Displayed Info:
+
+- 🆔 **ID**
+- 🔢 **Version**
+- 🕒 **Timestamp**
+- 📄 **YAML Preview** (first 100 characters)
+- 👁️ **View Button** to load full YAML content 
+
+---
+
 
 Dependencies
 

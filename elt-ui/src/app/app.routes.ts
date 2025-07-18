@@ -29,7 +29,13 @@ export const routes: Routes = [
   path: 'admin/trigger',
   loadComponent: () => import('./triggerjob/triggerjob').then(m => m.TriggerJobComponent),
   canActivate: [AuthGuard]
+},
+
+{
+  path: 'config-history',
+  loadComponent: () => import('./confighist/confighist').then(m => m.ConfigHistoryComponent)
 }
+
  // ✅ Add this line
 
 ];

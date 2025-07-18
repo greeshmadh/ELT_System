@@ -13,8 +13,9 @@ unit testing
 
 frontend:-
 dashboard - check doc 
-logs should be shown live running 
 BEAUTIFY FRONTEND
+view load data 
+config hist view
 
 
 DONE !!!
@@ -31,3 +32,5 @@ INCLUDE AUTHENTICATION
     Every request you send includes that JWT in the header:
     Authorization: Bearer <your-token>
     The server checks the token, and if it's valid, you’re allowed in
+logs should be shown live running 
+trigger job done - frontend with uploading yaml
