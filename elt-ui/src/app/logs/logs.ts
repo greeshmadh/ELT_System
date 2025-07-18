@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 
@@ -8,11 +8,19 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
   imports: [CommonModule, HttpClientModule],
   templateUrl: './logs.html',
 })
-export class LogsComponent {
+export class LogsComponent implements OnInit, OnDestroy {
   logs: string[] = [];
+  private intervalId: any;
 
-  constructor(private http: HttpClient) {
-    this.fetchLogs();
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.fetchLogs();  // Initial fetch
+    this.intervalId = setInterval(() => this.fetchLogs(), 10000);
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.intervalId);  // Cleanup to avoid memory leaks
   }
 
   fetchLogs() {
