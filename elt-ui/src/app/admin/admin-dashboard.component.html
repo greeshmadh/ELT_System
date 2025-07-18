@@ -1,0 +1,11 @@
+<h2>Admin Dashboard</h2>
+
+<!-- File input -->
+<input type="file" #fileInput accept=".yaml,.yml" />
+
+<!-- Buttons -->
+<div style="margin-top: 10px;">
+  <button (click)="triggerJob(fileInput)">Upload & Trigger ELT Job</button>
+  <button (click)="viewLogs()">View Logs</button>
+  <button (click)="viewHistory()">View Config History</button>
+</div>

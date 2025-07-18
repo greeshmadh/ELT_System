@@ -1,40 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private tokenKey = 'auth_token';
-  private roleKey = 'user_role';
+  private baseUrl = 'http://localhost:5000';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient) {}
 
-  loginWithCredentials(username: string, password: string) {
-    return this.http.post<any>('http://localhost:5000/auth/login', { username, password })
-      .pipe(response => {
-        response.subscribe(res => {
-          localStorage.setItem(this.tokenKey, res.token);
-          localStorage.setItem(this.roleKey, res.role);
-          this.router.navigate([res.role === 'admin' ? '/admin' : '/user']);
-        });
-        return response;
-      });
-  }
-
-  getToken(): string | null {
-    return localStorage.getItem(this.tokenKey);
-  }
-
-  getRole(): string | null {
-    return localStorage.getItem(this.roleKey);
+  loginWithCredentials(username: string, password: string): Observable<any> {
+    return this.http.post(`${this.baseUrl}/auth/login`, { username, password });
   }
 
   isAuthenticated(): boolean {
-    return !!this.getToken();
+    return !!localStorage.getItem('token');
   }
 
-  logout() {
-    localStorage.clear();
-    this.router.navigate(['/login']);
+  getToken(): string | null {
+    return localStorage.getItem('token');
   }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
+  }
+
+  
 }

@@ -5,8 +5,7 @@ try sfpt real
 
 backend:-
 admin has more privilagfes than user
-schedular must run even when laptop switch off
-INCLUDE AUTHENTICATION 
+schedular must run even when laptop switch off 
 coverage report of the project backend in the frontend it should show
 README file
 retry 
@@ -14,7 +13,8 @@ unit testing
 
 frontend:-
 dashboard - check doc 
-logs should be shown live 
+logs should be shown live running 
+
 
 
 DONE !!!
@@ -24,3 +24,10 @@ schema should check from csv and create table
 if new data added should check continously n integrate 
 config_history
 scheduler
+INCLUDE AUTHENTICATION
+    log in with username + password
+    Server checks it and gives you a JWT
+    You store the JWT in browser (usually in localStorage)
+    Every request you send includes that JWT in the header:
+    Authorization: Bearer <your-token>
+    The server checks the token, and if it's valid, you’re allowed in

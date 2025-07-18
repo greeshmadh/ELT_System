@@ -6,15 +6,23 @@ import json
 from flask_jwt_extended import JWTManager, jwt_required, create_access_token, get_jwt_identity
 from datetime import timedelta
 from flask_cors import CORS
+import subprocess
+import uuid
 
 
 app = Flask(__name__)
 
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 app.config["JWT_SECRET_KEY"] = "your-secret-key"  # use env var in production
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
 jwt = JWTManager(app)
 
+UPLOAD_FOLDER = './uploaded_configs/'
+ALLOWED_EXTENSIONS = {'yaml', 'yml'}
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/api/data', methods=['GET'])
 def get_api_data():
@@ -40,6 +48,7 @@ def get_api_data():
     return jsonify(combined_data), 200
 
 @app.route('/config-history', methods=['GET'])
+@jwt_required()
 def get_config_history():
     try:
         engine = create_engine('postgresql://elt_user:elt_password@localhost:5432/elt_db')
@@ -62,6 +71,7 @@ def get_config_history():
 
 
 @app.route('/logs', methods=['GET'])
+@jwt_required()
 def get_logs():
     try:
         with open("elt.log", "r") as f:
@@ -74,8 +84,9 @@ def get_logs():
 @app.route('/data-view', methods=['GET'])
 @jwt_required()
 def get_data_view():
-    user = get_jwt_identity()
-    if user["role"] != "admin":
+    user = get_jwt_identity()  # Now just a string
+
+    if USERS.get(user, {}).get("role") != "admin":
         return jsonify({"error": "Access denied"}), 403
 
     try:
@@ -114,8 +125,34 @@ def login():
     if not user or user["password"] != password:
         return jsonify({"error": "Invalid credentials"}), 401
 
-    token = create_access_token(identity={"username": username, "role": user["role"]})
+    token = create_access_token(identity=username)  # ✅ identity is now a string
     return jsonify({"token": token, "role": user["role"]})
+
+
+
+@app.route('/trigger-job', methods=['POST'])
+def trigger_job():
+    if request.method == 'OPTIONS':
+        return '', 200
+    if 'file' not in request.files:
+        return jsonify({"error": "No file part"}), 400
+
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({"error": "No selected file"}), 400
+
+    if file and allowed_file(file.filename):
+        unique_name = f"{uuid.uuid4().hex}_{file.filename}"
+        file_path = os.path.join(UPLOAD_FOLDER, unique_name)
+        file.save(file_path)
+
+        try:
+            subprocess.Popen(['python', 'scheduleAndManual.py', file_path])
+            return jsonify({"message": "ELT job triggered successfully!"}), 200
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+    else:
+        return jsonify({"error": "Invalid file format"}), 400
 
 
 if __name__ == '__main__':

@@ -1,6 +1,9 @@
 PROBS I FACED:- 
 1. Automatic reading when any files updated proablem i faced was that whole elt process would trigger for all input files resulting in duplicate data. 
-2. 
+2. Css was not loading so tried manual try and error on each part then had to create another div for whole login box to add the effects.
+3. Error: The backend expected a JWT with a valid identity object, but the frontend token lacked a proper "sub" or "identity" string, causing the error: "Subject must be a string".
+   Solution: We fixed it by ensuring the JWT token’s identity is a string (like the username) instead of a dictionary, i.e., used identity=username instead of {"username": ..., "role": ...} when calling create_access_token().
+4.
 
 
 EXCEPTIONS IN PROJ:-

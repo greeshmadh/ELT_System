@@ -1,0 +1,8 @@
+<!-- src/app/triggerjob/triggerjob.component.html -->
+<h2>Trigger ELT Job</h2>
+
+<input type="file" accept=".yaml,.yml" (change)="onFileSelected($event)" />
+<br /><br />
+<button (click)="onUpload()">Upload & Trigger</button>
+
+<p>{{ message }}</p>

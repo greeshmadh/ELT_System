@@ -1,0 +1,22 @@
+sources:
+  - type: local
+    path: "./data/input_files_std_schema"
+
+  - type: api
+    url: "http://localhost:5000/api/data"
+    auth_token: "xyz123"
+    folder_param: "./data/api"
+
+target:
+  type: postgres
+  host: "localhost"
+  port: 5432
+  database: "elt_db"
+  user: "elt_user"
+  password: "elt_password"
+  table: "schedule_data3"
+
+strict_mode: true
+
+start_time: "2025-07-19 00:13"
+end_time: "2025-07-19 00:14"
