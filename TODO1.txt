@@ -9,7 +9,7 @@ schedular must run even when laptop switch off
 coverage report of the project backend in the frontend it should show
 README file
 retry 
-unit testing
+unit testing - frontend
 REMOVE Unwanted and redundant code after presenattion
 
 frontend:-
@@ -40,3 +40,4 @@ trigger job done - frontend with uploading yaml
 config hist view
 view load data -admin
 user side data view
+unit testing backend - E,L,ELT,app.py

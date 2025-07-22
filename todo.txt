@@ -33,15 +33,6 @@ View schedule status
 Write Unit Tests for Key Sections
 
 
-🔵 c. View Logs
-Test /logs route with JWT token.
-
-Validate:
-
-Status code = 200
-
-Response contains log lines
-
 🟣 d. Config History
 Test /config-history endpoint with JWT.
 
