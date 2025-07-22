@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from sqlalchemy import create_engine, Table, MetaData
+from sqlalchemy import create_engine, Table, MetaData,text
 import yaml
 import os
 import json
@@ -103,29 +103,6 @@ def get_logs():
         return jsonify({"error": str(e)}), 500
 
 
-@app.route('/data-view', methods=['GET'])
-@jwt_required()
-def get_data_view():
-    user = get_jwt_identity()  # Now just a string
-
-    if USERS.get(user, {}).get("role") != "admin":
-        return jsonify({"error": "Access denied"}), 403
-
-    try:
-        engine = create_engine('postgresql://elt_user:elt_password@localhost:5432/elt_db')
-        table_name = "raw_data"
-
-        with engine.connect() as conn:
-            result = conn.execute(f"SELECT * FROM {table_name} ORDER BY 1 DESC LIMIT 100")
-            columns = result.keys()
-            rows = [dict(zip(columns, row)) for row in result]
-
-        return jsonify({"columns": columns, "rows": rows})
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-
 
 @app.route('/')
 def health():
@@ -150,6 +127,50 @@ def login():
     token = create_access_token(identity=username)  # ✅ identity is now a string
     return jsonify({"token": token, "role": user["role"]})
 
+@app.route('/data-view', methods=['POST'])
+def data_view_from_uploaded_yaml():
+    if request.method == 'OPTIONS':
+        return '', 200
+
+    if 'file' not in request.files:
+        return jsonify({"error": "No file part"}), 400
+
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({"error": "No selected file"}), 400
+
+    if file and allowed_file(file.filename):
+        try:
+            # Save the uploaded YAML
+            unique_name = f"{uuid.uuid4().hex}_{file.filename}"
+            file_path = os.path.join(UPLOAD_FOLDER, unique_name)
+            file.save(file_path)
+
+            # Read YAML to get DB/table info
+            with open(file_path, 'r') as f:
+                config = yaml.safe_load(f)
+
+            db_name = config.get('target', {}).get('database')
+            table_name = config.get('target', {}).get('table')
+
+            if not db_name or not table_name:
+                return jsonify({"error": "'database' or 'table' not found under 'target' in YAML"}), 400
+
+            # Create dynamic engine based on YAML DB name
+            engine = create_engine(f'postgresql://elt_user:elt_password@localhost:5432/{db_name}')
+
+            with engine.connect() as conn:
+                query = text(f"SELECT * FROM {table_name} LIMIT 100")
+                result = conn.execute(query)
+                columns = list(result.keys())
+                rows = [dict(zip(columns, row)) for row in result]
+
+            return jsonify({"columns": columns, "rows": rows})
+
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    return jsonify({"error": "Invalid file format"}), 400
 
 
 @app.route('/trigger-job', methods=['POST'])

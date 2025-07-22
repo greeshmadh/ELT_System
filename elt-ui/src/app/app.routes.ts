@@ -5,7 +5,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { AdminDashboardComponent } from './admin/admin-dashboard.component';
 import { LogsComponent } from './logs/logs'; // make sure path is correct
 import { TriggerJobComponent } from './triggerjob/triggerjob'; // make sure path is correct
-
+import { DataViewComponent } from './data-view-component/data-view-component';
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
@@ -34,8 +34,11 @@ export const routes: Routes = [
 {
   path: 'config-history',
   loadComponent: () => import('./confighist/confighist').then(m => m.ConfigHistoryComponent)
+},
+{
+  path: 'data-view',
+  loadComponent: () => import('./data-view-component/data-view-component').then(m => m.DataViewComponent),
 }
-
  // ✅ Add this line
 
 ];

@@ -3,7 +3,10 @@ PROBS I FACED:-
 2. Css was not loading so tried manual try and error on each part then had to create another div for whole login box to add the effects.
 3. Error: The backend expected a JWT with a valid identity object, but the frontend token lacked a proper "sub" or "identity" string, causing the error: "Subject must be a string".
    Solution: We fixed it by ensuring the JWT token’s identity is a string (like the username) instead of a dictionary, i.e., used identity=username instead of {"username": ..., "role": ...} when calling create_access_token().
-4.
+4. The yaml was read from file input only when trigger job sent as worked on it first. But just load to view data
+   without running elt job also yaml should be read and data loaded in frontend. 
+   Sol:- Sent the fileinput from admin dashboard to view data function button click. So yaml file sent on api call 
+   POST data-view. 
 
 
 EXCEPTIONS IN PROJ:-
