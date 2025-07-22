@@ -30,13 +30,26 @@ View schedule status
  Config viewer via /config-history
 
 7. Unit Testing
-✅ After finalizing core modules, write pytest unit tests for:
+Write Unit Tests for Key Sections
 
-YAML parser
 
-extract functions
+🔵 c. View Logs
+Test /logs route with JWT token.
 
-load function
+Validate:
 
-scheduler trigger
+Status code = 200
 
+Response contains log lines
+
+🟣 d. Config History
+Test /config-history endpoint with JWT.
+
+Insert a mock row in test DB and validate response structure.
+
+🟠 e. Data View
+Upload a test YAML config.
+
+Mock a sample database table and return fake data.
+
+Assert the endpoint returns expected rows and columns.

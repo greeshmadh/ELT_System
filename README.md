@@ -41,6 +41,8 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
 - Appends data to the specified target table.
 - Supports retry mechanism for fault-tolerance.
 - Only new rows are inserted using a row-level hash to prevent duplicates.
+-Users can now preview database table content before running the ELT job using a YAML config.
+-Table name is dynamically read from the uploaded YAML file.
 
 
 ### 5. **YAML Upload and Versioning**
@@ -96,6 +98,7 @@ Provides a web-based UI to manage the ELT pipeline.
 - 📜 **View Config Upload History** – shows versioned YAML uploads.
 - 🔐 Requires login via frontend using valid credentials.
 - 💾 Stores JWT securely in `localStorage` for authorized requests.
+-📊 View Table Data: Admin can upload a YAML file to view what data is currently present in the target PostgreSQL table.
 
 ---
 
@@ -123,6 +126,19 @@ Provides a web-based UI to manage the ELT pipeline.
 - 🕒 **Timestamp**
 - 📄 **YAML Preview** (first 100 characters)
 - 👁️ **View Button** to load full YAML content 
+
+## 🧑‍💼 12. User Dashboard (Angular Frontend)
+
+A simplified dashboard tailored for **non-admin users**.
+
+### ✅ Features:
+
+- ✅ **Upload YAML** to preview data present in the target PostgreSQL table.
+- 🔐 **Authenticated** via JWT token using the `user` role.
+- 📄 **Reuses** the same `/data-view` backend logic used by the admin.
+- 🧪 Helps users verify table contents before running the ELT job.
+
+> Ideal for analysts or data consumers who need visibility but not full ELT control.
 
 ---
 

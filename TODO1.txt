@@ -10,13 +10,16 @@ coverage report of the project backend in the frontend it should show
 README file
 retry 
 unit testing
+REMOVE Unwanted and redundant code after presenattion
 
 frontend:-
 dashboard - check doc 
 BEAUTIFY FRONTEND - all pages
 user side - filter and search 
 
-
+learn:-
+Angular works how flow
+pytest working
 
 DONE !!!
 api and normal both extract with/without schema in yaml  
