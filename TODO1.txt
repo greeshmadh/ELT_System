@@ -13,9 +13,9 @@ unit testing
 
 frontend:-
 dashboard - check doc 
-BEAUTIFY FRONTEND
-view load data 
-config hist view
+BEAUTIFY FRONTEND - all pages
+user side - filter and search 
+
 
 
 DONE !!!
@@ -34,3 +34,6 @@ INCLUDE AUTHENTICATION
     The server checks the token, and if it's valid, you’re allowed in
 logs should be shown live running 
 trigger job done - frontend with uploading yaml
+config hist view
+view load data -admin
+user side data view

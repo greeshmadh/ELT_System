@@ -6,12 +6,13 @@ import { AdminDashboardComponent } from './admin/admin-dashboard.component';
 import { LogsComponent } from './logs/logs'; // make sure path is correct
 import { TriggerJobComponent } from './triggerjob/triggerjob'; // make sure path is correct
 import { DataViewComponent } from './data-view-component/data-view-component';
+import { UserDashboardComponent } from './user/user';
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'user',
     canActivate: [AuthGuard],
-    loadChildren: () => import('./user/user-module').then(m => m.UserModule)
+    component: UserDashboardComponent
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
