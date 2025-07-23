@@ -180,3 +180,296 @@
 2025-07-23 02:13:25,172 - INFO - No new rows to load.
 2025-07-23 02:13:41,101 - INFO - Graceful shutdown signal received.
 2025-07-23 02:14:25,174 - INFO - ELT job completed and stopped.
+2025-07-23 14:44:21,988 - INFO - Reading config from: ./uploaded_configs/c6e1c883baa7417e8fae9fc463bb27e2_testing2.yaml
+2025-07-23 14:44:22,011 - INFO - YAML config loaded successfully.
+2025-07-23 14:44:22,345 - INFO - New config stored as version 15
+2025-07-23 14:44:22,348 - INFO - Waiting for start time: 2025-07-23 14:45:00
+2025-07-23 14:44:32,350 - INFO - Waiting for start time: 2025-07-23 14:45:00
+2025-07-23 14:44:42,352 - INFO - Waiting for start time: 2025-07-23 14:45:00
+2025-07-23 14:44:52,354 - INFO - Waiting for start time: 2025-07-23 14:45:00
+2025-07-23 14:45:02,356 - INFO - Starting ELT job...
+2025-07-23 14:45:02,445 - INFO - Read file1.json, rows: 2
+2025-07-23 14:45:02,453 - INFO - Read file2.json, rows: 3
+2025-07-23 14:45:02,470 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:45:02,476 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:45:02,485 - INFO - Read file5.json, rows: 4
+2025-07-23 14:45:02,491 - INFO - Read file6.json, rows: 10
+2025-07-23 14:45:02,493 - INFO - Total combined rows from local: 23
+2025-07-23 14:45:02,495 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:45:02,496 - INFO - Combined data shape: (23, 3)
+2025-07-23 14:45:02,529 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:45:02,542 - INFO - CSV loaded with 23 rows and columns: ['id', 'name', 'role']
+2025-07-23 14:45:02,865 - INFO - Table 'testing2' created or already exists.
+2025-07-23 14:45:02,928 - INFO - Data successfully loaded into table 'testing2'.
+2025-07-23 14:45:02,929 - INFO - Loaded 23 new rows to DB.
+2025-07-23 14:45:02,931 - INFO - Started background watcher. Checking for updates every 60 seconds.
+2025-07-23 14:45:02,932 - INFO - Press 'g' then Enter to gracefully stop the job.
+2025-07-23 14:45:02,942 - INFO - Read file1.json, rows: 2
+2025-07-23 14:45:02,948 - INFO - Read file2.json, rows: 3
+2025-07-23 14:45:02,952 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:45:02,955 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:45:02,962 - INFO - Read file5.json, rows: 4
+2025-07-23 14:45:02,968 - INFO - Read file6.json, rows: 10
+2025-07-23 14:45:02,969 - INFO - Total combined rows from local: 23
+2025-07-23 14:45:02,970 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:45:02,971 - INFO - Combined data shape: (23, 3)
+2025-07-23 14:45:02,986 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:45:03,003 - INFO - No new rows to load.
+2025-07-23 14:46:03,010 - INFO - Read file1.json, rows: 2
+2025-07-23 14:46:03,014 - INFO - Read file2.json, rows: 3
+2025-07-23 14:46:03,017 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:46:03,019 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:46:03,023 - INFO - Read file5.json, rows: 4
+2025-07-23 14:46:03,028 - INFO - Read file6.json, rows: 10
+2025-07-23 14:46:03,029 - ERROR - Failed to read file7.json: Expected object or value
+2025-07-23 14:46:03,030 - INFO - Total combined rows from local: 23
+2025-07-23 14:46:03,031 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:46:03,031 - INFO - Combined data shape: (23, 3)
+2025-07-23 14:46:03,033 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:46:03,037 - INFO - No new rows to load.
+2025-07-23 14:47:03,044 - INFO - Read file1.json, rows: 2
+2025-07-23 14:47:03,049 - INFO - Read file2.json, rows: 3
+2025-07-23 14:47:03,053 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:47:03,058 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:47:03,065 - INFO - Read file5.json, rows: 4
+2025-07-23 14:47:03,076 - INFO - Read file6.json, rows: 10
+2025-07-23 14:47:03,084 - INFO - Read file7.json, rows: 10
+2025-07-23 14:47:03,085 - INFO - Total combined rows from local: 33
+2025-07-23 14:47:03,086 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:47:03,086 - INFO - Combined data shape: (33, 3)
+2025-07-23 14:47:03,089 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:47:03,104 - INFO - CSV loaded with 10 rows and columns: ['id', 'name', 'role']
+2025-07-23 14:47:03,151 - INFO - Table 'testing2' created or already exists.
+2025-07-23 14:47:03,170 - INFO - Data successfully loaded into table 'testing2'.
+2025-07-23 14:47:03,171 - INFO - Loaded 10 new rows to DB.
+2025-07-23 14:48:03,177 - INFO - Read file1.json, rows: 2
+2025-07-23 14:48:03,183 - INFO - Read file2.json, rows: 3
+2025-07-23 14:48:03,186 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:48:03,190 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:48:03,195 - INFO - Read file5.json, rows: 4
+2025-07-23 14:48:03,201 - INFO - Read file6.json, rows: 19
+2025-07-23 14:48:03,207 - INFO - Read file7.json, rows: 10
+2025-07-23 14:48:03,209 - INFO - Total combined rows from local: 42
+2025-07-23 14:48:03,210 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:48:03,211 - INFO - Combined data shape: (42, 3)
+2025-07-23 14:48:03,333 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:48:03,348 - INFO - CSV loaded with 9 rows and columns: ['id', 'name', 'role']
+2025-07-23 14:48:03,559 - INFO - Table 'testing2' created or already exists.
+2025-07-23 14:48:03,566 - INFO - Data successfully loaded into table 'testing2'.
+2025-07-23 14:48:03,568 - INFO - Loaded 9 new rows to DB.
+2025-07-23 14:49:03,574 - INFO - Read file1.json, rows: 2
+2025-07-23 14:49:03,582 - INFO - Read file2.json, rows: 3
+2025-07-23 14:49:03,585 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:49:03,588 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:49:03,594 - INFO - Read file5.json, rows: 4
+2025-07-23 14:49:03,601 - INFO - Read file6.json, rows: 19
+2025-07-23 14:49:03,608 - INFO - Read file7.json, rows: 10
+2025-07-23 14:49:03,609 - INFO - Total combined rows from local: 42
+2025-07-23 14:49:03,610 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:49:03,611 - INFO - Combined data shape: (42, 3)
+2025-07-23 14:49:03,684 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:49:03,693 - INFO - No new rows to load.
+2025-07-23 14:50:02,964 - INFO - End time 2025-07-23 14:50:00 reached. Stopping job...
+2025-07-23 14:50:03,695 - INFO - ELT job completed and stopped.
+2025-07-23 14:51:48,249 - INFO - Reading config from: ./uploaded_configs/b05af8a3488246dba305ae8c16c67a46_testing2.yaml
+2025-07-23 14:51:48,255 - INFO - YAML config loaded successfully.
+2025-07-23 14:51:48,438 - INFO - New config stored as version 16
+2025-07-23 14:51:48,438 - INFO - Starting ELT job...
+2025-07-23 14:51:48,450 - INFO - Read file1.json, rows: 2
+2025-07-23 14:51:48,455 - INFO - Read file2.json, rows: 3
+2025-07-23 14:51:48,458 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:51:48,464 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:51:48,469 - INFO - Read file5.json, rows: 4
+2025-07-23 14:51:48,472 - INFO - Read file6.json, rows: 19
+2025-07-23 14:51:48,477 - INFO - Read file7.json, rows: 10
+2025-07-23 14:51:48,479 - INFO - Total combined rows from local: 42
+2025-07-23 14:51:48,480 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:51:48,481 - INFO - Combined data shape: (42, 3)
+2025-07-23 14:51:48,511 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:51:48,535 - INFO - CSV loaded with 42 rows and columns: ['id', 'name', 'role']
+2025-07-23 14:51:48,612 - INFO - Table 'testing2' created or already exists.
+2025-07-23 14:51:48,622 - INFO - Data successfully loaded into table 'testing2'.
+2025-07-23 14:51:48,623 - INFO - Loaded 42 new rows to DB.
+2025-07-23 14:51:48,624 - INFO - Started background watcher. Checking for updates every 60 seconds.
+2025-07-23 14:51:48,625 - INFO - Press 'g' then Enter to gracefully stop the job.
+2025-07-23 14:51:48,634 - INFO - Read file1.json, rows: 2
+2025-07-23 14:51:48,637 - INFO - Read file2.json, rows: 3
+2025-07-23 14:51:48,640 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:51:48,643 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:51:48,650 - INFO - Read file5.json, rows: 4
+2025-07-23 14:51:48,653 - INFO - Read file6.json, rows: 19
+2025-07-23 14:51:48,657 - INFO - Read file7.json, rows: 10
+2025-07-23 14:51:48,658 - INFO - Total combined rows from local: 42
+2025-07-23 14:51:48,659 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:51:48,661 - INFO - Combined data shape: (42, 3)
+2025-07-23 14:51:48,678 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:51:48,693 - INFO - No new rows to load.
+2025-07-23 14:52:21,286 - INFO - Graceful shutdown signal received.
+2025-07-23 14:52:48,708 - INFO - Read file1.json, rows: 2
+2025-07-23 14:52:48,719 - INFO - Read file2.json, rows: 3
+2025-07-23 14:52:48,725 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:52:48,729 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:52:48,735 - INFO - Read file5.json, rows: 4
+2025-07-23 14:52:48,746 - INFO - Read file6.json, rows: 19
+2025-07-23 14:52:48,753 - INFO - Read file7.json, rows: 10
+2025-07-23 14:52:48,756 - INFO - Total combined rows from local: 42
+2025-07-23 14:52:48,757 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:52:48,759 - INFO - Combined data shape: (42, 3)
+2025-07-23 14:52:48,762 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:52:48,772 - INFO - No new rows to load.
+2025-07-23 14:53:48,778 - INFO - Read file1.json, rows: 2
+2025-07-23 14:53:48,782 - INFO - Read file2.json, rows: 3
+2025-07-23 14:53:48,784 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:53:48,787 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:53:48,792 - INFO - Read file5.json, rows: 4
+2025-07-23 14:53:48,795 - INFO - Read file6.json, rows: 19
+2025-07-23 14:53:48,798 - INFO - Read file7.json, rows: 10
+2025-07-23 14:53:48,799 - INFO - Total combined rows from local: 42
+2025-07-23 14:53:48,799 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:53:48,800 - INFO - Combined data shape: (42, 3)
+2025-07-23 14:53:48,834 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:53:48,838 - INFO - No new rows to load.
+2025-07-23 14:54:48,850 - INFO - Read file1.json, rows: 2
+2025-07-23 14:54:48,854 - INFO - Read file2.json, rows: 3
+2025-07-23 14:54:48,858 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:54:48,861 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:54:48,865 - INFO - Read file5.json, rows: 4
+2025-07-23 14:54:48,872 - INFO - Read file6.json, rows: 19
+2025-07-23 14:54:48,883 - INFO - Read file7.json, rows: 10
+2025-07-23 14:54:48,886 - INFO - Total combined rows from local: 42
+2025-07-23 14:54:48,888 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:54:48,888 - INFO - Combined data shape: (42, 3)
+2025-07-23 14:54:48,891 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:54:48,897 - INFO - No new rows to load.
+2025-07-23 14:55:48,904 - INFO - Read file1.json, rows: 2
+2025-07-23 14:55:48,910 - INFO - Read file2.json, rows: 3
+2025-07-23 14:55:48,913 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:55:48,917 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:55:48,925 - INFO - Read file5.json, rows: 4
+2025-07-23 14:55:48,931 - INFO - Read file6.json, rows: 19
+2025-07-23 14:55:48,938 - INFO - Read file7.json, rows: 10
+2025-07-23 14:55:48,941 - INFO - Total combined rows from local: 42
+2025-07-23 14:55:48,942 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:55:48,943 - INFO - Combined data shape: (42, 3)
+2025-07-23 14:55:49,027 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:55:49,040 - INFO - No new rows to load.
+2025-07-23 14:56:49,045 - INFO - Read file1.json, rows: 2
+2025-07-23 14:56:49,049 - INFO - Read file2.json, rows: 3
+2025-07-23 14:56:49,051 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:56:49,053 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:56:49,057 - INFO - Read file5.json, rows: 4
+2025-07-23 14:56:49,062 - INFO - Read file6.json, rows: 19
+2025-07-23 14:56:49,066 - INFO - Read file7.json, rows: 10
+2025-07-23 14:56:49,067 - INFO - Total combined rows from local: 42
+2025-07-23 14:56:49,068 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:56:49,068 - INFO - Combined data shape: (42, 3)
+2025-07-23 14:56:49,118 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:56:49,134 - INFO - No new rows to load.
+2025-07-23 14:57:49,145 - INFO - Read file1.json, rows: 2
+2025-07-23 14:57:49,155 - INFO - Read file2.json, rows: 3
+2025-07-23 14:57:49,161 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:57:49,168 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:57:49,176 - INFO - Read file5.json, rows: 4
+2025-07-23 14:57:49,183 - INFO - Read file6.json, rows: 19
+2025-07-23 14:57:49,193 - INFO - Read file7.json, rows: 10
+2025-07-23 14:57:49,194 - INFO - Total combined rows from local: 42
+2025-07-23 14:57:49,195 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:57:49,195 - INFO - Combined data shape: (42, 3)
+2025-07-23 14:57:49,197 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:57:49,201 - INFO - No new rows to load.
+2025-07-23 14:58:49,208 - INFO - Read file1.json, rows: 2
+2025-07-23 14:58:49,216 - INFO - Read file2.json, rows: 3
+2025-07-23 14:58:49,219 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:58:49,224 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:58:49,230 - INFO - Read file5.json, rows: 4
+2025-07-23 14:58:49,236 - INFO - Read file6.json, rows: 19
+2025-07-23 14:58:49,244 - INFO - Read file7.json, rows: 10
+2025-07-23 14:58:49,247 - INFO - Total combined rows from local: 42
+2025-07-23 14:58:49,251 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:58:49,253 - INFO - Combined data shape: (42, 3)
+2025-07-23 14:58:49,257 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:58:49,265 - INFO - No new rows to load.
+2025-07-23 14:59:49,272 - INFO - Read file1.json, rows: 2
+2025-07-23 14:59:49,278 - INFO - Read file2.json, rows: 3
+2025-07-23 14:59:49,282 - INFO - Read file3.txt, rows: 2
+2025-07-23 14:59:49,285 - INFO - Read file4.csv, rows: 2
+2025-07-23 14:59:49,289 - INFO - Read file5.json, rows: 4
+2025-07-23 14:59:49,295 - INFO - Read file6.json, rows: 19
+2025-07-23 14:59:49,303 - INFO - Read file7.json, rows: 10
+2025-07-23 14:59:49,305 - INFO - Total combined rows from local: 42
+2025-07-23 14:59:49,306 - WARNING - Unknown or skipped source type: api
+2025-07-23 14:59:49,307 - INFO - Combined data shape: (42, 3)
+2025-07-23 14:59:49,310 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 14:59:49,319 - INFO - No new rows to load.
+2025-07-23 15:00:49,324 - INFO - Read file1.json, rows: 2
+2025-07-23 15:00:49,326 - INFO - Read file2.json, rows: 3
+2025-07-23 15:00:49,327 - INFO - Read file3.txt, rows: 2
+2025-07-23 15:00:49,328 - INFO - Read file4.csv, rows: 2
+2025-07-23 15:00:49,331 - INFO - Read file5.json, rows: 4
+2025-07-23 15:00:49,333 - INFO - Read file6.json, rows: 19
+2025-07-23 15:00:49,335 - INFO - Read file7.json, rows: 10
+2025-07-23 15:00:49,336 - INFO - Total combined rows from local: 42
+2025-07-23 15:00:49,336 - WARNING - Unknown or skipped source type: api
+2025-07-23 15:00:49,337 - INFO - Combined data shape: (42, 3)
+2025-07-23 15:00:49,338 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 15:00:49,342 - INFO - No new rows to load.
+2025-07-23 15:01:49,356 - INFO - Read file1.json, rows: 2
+2025-07-23 15:01:49,367 - INFO - Read file2.json, rows: 3
+2025-07-23 15:01:49,371 - INFO - Read file3.txt, rows: 2
+2025-07-23 15:01:49,375 - INFO - Read file4.csv, rows: 2
+2025-07-23 15:01:49,384 - INFO - Read file5.json, rows: 4
+2025-07-23 15:01:49,392 - INFO - Read file6.json, rows: 19
+2025-07-23 15:01:49,400 - INFO - Read file7.json, rows: 10
+2025-07-23 15:01:49,401 - INFO - Total combined rows from local: 42
+2025-07-23 15:01:49,402 - WARNING - Unknown or skipped source type: api
+2025-07-23 15:01:49,402 - INFO - Combined data shape: (42, 3)
+2025-07-23 15:01:49,405 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 15:01:49,414 - INFO - No new rows to load.
+2025-07-23 15:02:49,422 - INFO - Read file1.json, rows: 2
+2025-07-23 15:02:49,427 - INFO - Read file2.json, rows: 3
+2025-07-23 15:02:49,430 - INFO - Read file3.txt, rows: 2
+2025-07-23 15:02:49,433 - INFO - Read file4.csv, rows: 2
+2025-07-23 15:02:49,437 - INFO - Read file5.json, rows: 4
+2025-07-23 15:02:49,441 - INFO - Read file6.json, rows: 19
+2025-07-23 15:02:49,446 - INFO - Read file7.json, rows: 10
+2025-07-23 15:02:49,447 - INFO - Total combined rows from local: 42
+2025-07-23 15:02:49,448 - WARNING - Unknown or skipped source type: api
+2025-07-23 15:02:49,449 - INFO - Combined data shape: (42, 3)
+2025-07-23 15:02:49,450 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 15:02:49,457 - INFO - No new rows to load.
+2025-07-23 15:03:49,464 - INFO - Read file1.json, rows: 2
+2025-07-23 15:03:49,470 - INFO - Read file2.json, rows: 3
+2025-07-23 15:03:49,474 - INFO - Read file3.txt, rows: 2
+2025-07-23 15:03:49,477 - INFO - Read file4.csv, rows: 2
+2025-07-23 15:03:49,484 - INFO - Read file5.json, rows: 4
+2025-07-23 15:03:49,492 - INFO - Read file6.json, rows: 19
+2025-07-23 15:03:49,499 - INFO - Read file7.json, rows: 10
+2025-07-23 15:03:49,500 - INFO - Total combined rows from local: 42
+2025-07-23 15:03:49,501 - WARNING - Unknown or skipped source type: api
+2025-07-23 15:03:49,501 - INFO - Combined data shape: (42, 3)
+2025-07-23 15:03:49,505 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 15:03:49,516 - INFO - No new rows to load.
+2025-07-23 15:04:49,528 - INFO - Read file1.json, rows: 2
+2025-07-23 15:04:49,539 - INFO - Read file2.json, rows: 3
+2025-07-23 15:04:49,544 - INFO - Read file3.txt, rows: 2
+2025-07-23 15:04:49,549 - INFO - Read file4.csv, rows: 2
+2025-07-23 15:04:49,555 - INFO - Read file5.json, rows: 4
+2025-07-23 15:04:49,563 - INFO - Read file6.json, rows: 19
+2025-07-23 15:04:49,571 - INFO - Read file7.json, rows: 10
+2025-07-23 15:04:49,573 - INFO - Total combined rows from local: 42
+2025-07-23 15:04:49,574 - WARNING - Unknown or skipped source type: api
+2025-07-23 15:04:49,574 - INFO - Combined data shape: (42, 3)
+2025-07-23 15:04:49,577 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 15:04:49,591 - INFO - No new rows to load.
+2025-07-23 15:05:49,602 - INFO - Read file1.json, rows: 2
+2025-07-23 15:05:49,612 - INFO - Read file2.json, rows: 3
+2025-07-23 15:05:49,618 - INFO - Read file3.txt, rows: 2
+2025-07-23 15:05:49,623 - INFO - Read file4.csv, rows: 2
+2025-07-23 15:05:49,630 - INFO - Read file5.json, rows: 4
+2025-07-23 15:05:49,635 - INFO - Read file6.json, rows: 19
+2025-07-23 15:05:49,642 - INFO - Read file7.json, rows: 10
+2025-07-23 15:05:49,644 - INFO - Total combined rows from local: 42
+2025-07-23 15:05:49,644 - WARNING - Unknown or skipped source type: api
+2025-07-23 15:05:49,645 - INFO - Combined data shape: (42, 3)
+2025-07-23 15:05:49,647 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 15:05:49,652 - INFO - No new rows to load.

@@ -8,5 +8,14 @@
   {"id": 745, "name": "Grace", "role": "Architect"},
   {"id": 845, "name": "Heidi", "role": "Product Owner"},
   {"id": 945, "name": "Ivan", "role": "Scrum Master"},
-  {"id": 1045, "name": "Judy", "role": "Business Analyst"}
+  {"id": 1045, "name": "Judy", "role": "Business Analyst"},
+  {"id": 1145, "name": "Karl", "role": "DevOps Engineer"},
+  {"id": 1245, "name": "Leo", "role": "Data Scientist"},
+  {"id": 1345, "name": "Mia", "role": "UX Designer"},
+  {"id": 1445, "name": "Nina", "role": "Content Strategist"},
+  {"id": 1545, "name": "Oscar", "role": "SEO Specialist"},
+  {"id": 1645, "name": "Paul", "role": "Marketing Manager"},
+  {"id": 1745, "name": "Quinn", "role": "Sales Executive"},
+  {"id": 1845, "name": "Rita", "role": "Customer Support"},
+  {"id": 1945, "name": "Sam", "role": "System Administrator"}
 ]

@@ -8,12 +8,10 @@ admin has more privilagfes than user
 schedular must run even when laptop switch off 
 coverage report of the project backend in the frontend it should show
 README file
-retry 
 unit testing - frontend
 REMOVE Unwanted and redundant code after presenattion
 
 frontend:-
-dashboard - check doc 
 BEAUTIFY FRONTEND - all pages
 user side - filter and search 
 
@@ -22,6 +20,7 @@ Angular works how flow
 pytest working
 
 DONE !!!
+dashboard - check doc 
 api and normal both extract with/without schema in yaml  
 Standardized usable CSV creation and Validation - schema check 
 schema should check from csv and create table
@@ -41,3 +40,4 @@ config hist view
 view load data -admin
 user side data view
 unit testing backend - E,L,ELT,app.py
+retry - for all routes

@@ -24,3 +24,10 @@ ng generate component auth/login
 
 --RUN file 
 ng serve
+
+
+
+--Coverage report 
+coverage run -m pytest tests/
+coverage json -o coverage.json
+see this in frontend by having a app.py route and a button in frontend

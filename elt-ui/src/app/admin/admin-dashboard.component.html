@@ -9,6 +9,10 @@
   <button (click)="viewLogs()">View Logs</button>
   <button (click)="viewHistory()">View Config History</button>
   <button (click)="viewData(fileInput)">📊 View Uploaded Table Data</button>
+  <button (click)="fetchCoverage()">📈 View Test Coverage</button>
+  <div *ngIf="coveragePercent">
+  <p><strong>Backend Test Coverage:</strong> {{ coveragePercent }}%</p>
+</div>
 
 
 </div>

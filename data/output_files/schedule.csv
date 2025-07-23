@@ -1,17 +1,43 @@
-emp_id,name,department,salary,product_id,price,in_stock,timestamp,sensor_id,temperature,humidity,customer_id,feedback,rating,id,amount,role
-101.0,Alice,Engineering,75000.0,,,,,,,,,,,,,
-102.0,Bob,HR,60000.0,,,,,,,,,,,,,
-103.0,Charlie,Finance,68000.0,,,,,,,,,,,,,
-,Laptop,,,P001,56000.0,True,,,,,,,,,,
-,Mouse,,,P002,450.0,False,,,,,,,,,,
-,,,,,,,2024-06-11T12:00:00,S1,23.4,45.0,,,,,,
-,,,,,,,2024-06-11T12:05:00,S2,24.1,43.0,,,,,,
-,,,,,,,2024-06-11T12:10:00,S1,22.8,46.0,,,,,,
-,,,,,,,,,,,C001,Great service,5.0,,,
-,,,,,,,,,,,C002,Average experience,3.0,,,
-,,,,,,,,,,,C003,Not satisfied,2.0,,,
-,,,,,,,,,,,C004,Noooo,7.0,,,
-,alice,,,,,,,,,,,,,T1001,1000.0,success
-,bob,,,,,,,,,,,,,T1002,500.0,failed
-,charlie,,,,,,,,,,,,,T1003,750.0,success
-,david,,,,,,,,,,,,,T1004,300.0,failed
+id,name,role
+1,Alice,Engineer
+2,Bob,Manager
+7,Alic2e,Engineer
+8,Bo2b,Manager
+8,Bo2b,Manager
+5,Eve,Designer
+6,Frank,Consultant
+3,Charlie,Analyst
+4,Diana,Scientist
+100,Alice,Engineer
+101,Bob,Manager
+102,Charlie,Analyst
+103,David,Designer
+145,Alice,Engineer
+245,Bob,Manager
+345,Charlie,Designer
+445,David,Analyst
+545,Eve,Developer
+645,Frank,Tester
+745,Grace,Architect
+845,Heidi,Product Owner
+945,Ivan,Scrum Master
+1045,Judy,Business Analyst
+1145,Karl,DevOps Engineer
+1245,Leo,Data Scientist
+1345,Mia,UX Designer
+1445,Nina,Content Strategist
+1545,Oscar,SEO Specialist
+1645,Paul,Marketing Manager
+1745,Quinn,Sales Executive
+1845,Rita,Customer Support
+1945,Sam,System Administrator
+147,Alice,Engineer
+247,Bob,Manager
+375,Charlie,Designer
+475,David,Analyst
+575,Eve,Developer
+675,Frank,Tester
+775,Grace,Architect
+8475,Heidi,Product Owner
+947,Ivan,Scrum Master
+1075,Judy,Business Analyst

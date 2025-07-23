@@ -8,6 +8,8 @@ from datetime import timedelta
 from flask_cors import CORS
 import subprocess
 import uuid
+from tenacity import retry, stop_after_attempt, wait_fixed, RetryError
+
 
 
 app = Flask(__name__)
@@ -25,6 +27,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/api/data', methods=['GET'])
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(2))
 def get_api_data():
     folder_path = request.args.get('path', './data/api')  # Default fallback
     combined_data = []
@@ -47,8 +50,10 @@ def get_api_data():
 
     return jsonify(combined_data), 200
 
+
 @app.route('/config-history', methods=['GET'])
 @jwt_required()
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(2))
 def get_config_history():
     try:
         engine = create_engine('postgresql://elt_user:elt_password@localhost:5432/elt_db')
@@ -70,6 +75,7 @@ def get_config_history():
 
 @app.route('/config/<int:config_id>', methods=['GET'])
 @jwt_required()
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(2))
 def get_single_config(config_id):
     try:
         engine = create_engine('postgresql://elt_user:elt_password@localhost:5432/elt_db')
@@ -94,6 +100,7 @@ def get_single_config(config_id):
 
 @app.route('/logs', methods=['GET'])
 @jwt_required()
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(2))
 def get_logs():
     try:
         with open("elt.log", "r") as f:
@@ -115,6 +122,7 @@ USERS = {
 }
 
 @app.route('/auth/login', methods=['POST'])
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(2))
 def login():
     data = request.get_json()
     username = data.get("username")
@@ -128,6 +136,7 @@ def login():
     return jsonify({"token": token, "role": user["role"]})
 
 @app.route('/data-view', methods=['POST'])
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(2))
 def data_view_from_uploaded_yaml():
     if request.method == 'OPTIONS':
         return '', 200
@@ -174,6 +183,7 @@ def data_view_from_uploaded_yaml():
 
 
 @app.route('/trigger-job', methods=['POST'])
+@retry(stop=stop_after_attempt(3), wait=wait_fixed(2))
 def trigger_job():
     if request.method == 'OPTIONS':
         return '', 200
@@ -196,6 +206,16 @@ def trigger_job():
             return jsonify({"error": str(e)}), 500
     else:
         return jsonify({"error": "Invalid file format"}), 400
+
+@app.route('/coverage-report', methods=['GET'])
+@jwt_required()  # Optional: secure it
+def get_coverage_report():
+    try:
+        with open("coverage.json", "r") as f:
+            data = json.load(f)
+        return jsonify(data), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == '__main__':
