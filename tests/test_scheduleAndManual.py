@@ -2,6 +2,30 @@ import pytest
 import pandas as pd
 from unittest.mock import patch
 from scheduleAndManual import hash_row, extract_and_load, inserted_hashes
+from scheduleAndManual import wait_for_manual_stop, background_watcher
+from unittest.mock import patch
+import threading
+import time
+from scheduleAndManual import background_watcher,stop_flag
+from extract import read_yaml_config
+
+def test_background_watcher_runs(tmp_path):
+    config_path = tmp_path / "mock_config.yaml"
+    config_path.write_text("source:\n  local:\n    path: 'mock.csv'")
+    config = read_yaml_config(config_path)
+
+    stop_flag.set()  # Immediately stop before thread starts
+    t = threading.Thread(target=background_watcher, args=(config,))
+    t.start()
+    t.join()
+    assert not t.is_alive()
+
+
+# def test_wait_for_manual_stop(monkeypatch):
+#     monkeypatch.setattr('builtins.input', lambda: 'g')
+#     assert wait_for_manual_stop() is True
+
+
 
 # Sample config
 SAMPLE_CONFIG = {

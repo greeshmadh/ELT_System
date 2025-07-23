@@ -67,7 +67,7 @@ def wait_for_manual_stop():
         if user_input == 'g':
             logger.info("Graceful shutdown signal received.")
             stop_flag.set()
-            break
+            return True
 
 
 def main():

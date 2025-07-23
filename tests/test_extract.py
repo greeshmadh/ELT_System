@@ -6,7 +6,8 @@ from extract import (
     extract_from_local,
     extract_from_api,
     validate_and_standardize,
-    run_extraction
+    run_extraction,
+    read_yaml_config
 )
 
 # Sample test data directory
@@ -70,3 +71,11 @@ def test_run_extraction_smoke(tmp_path):
     output_path = tmp_path / "output.csv"
     run_extraction(config=config, output_csv_path=str(output_path))
     assert output_path.exists()
+
+
+
+def test_read_yaml_valid(tmp_path):
+    file = tmp_path / "test.yaml"
+    file.write_text("source:\n  local:\n    path: 'data.csv'")
+    result = read_yaml_config(file)
+    assert "source" in result

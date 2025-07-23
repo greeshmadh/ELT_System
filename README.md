@@ -140,6 +140,18 @@ A simplified dashboard tailored for **non-admin users**.
 
 > Ideal for analysts or data consumers who need visibility but not full ELT control.
 
+### 📈 Test Coverage Report
+
+- A backend route `/coverage-report` serves the parsed JSON coverage summary.
+- The **Admin Dashboard** displays:
+  - ✅ **Overall test coverage percentage** (e.g., 87.5%)
+  - 📊 **Visual progress bar** to represent coverage graphically
+- The coverage report includes:
+  - 📄 Total covered lines
+  - 📄 Total statements
+  - 📊 Percentage of code covered by tests
+- ✅ Helps developers ensure that **critical backend logic** is well tested and maintained.
+
 ---
 
 
