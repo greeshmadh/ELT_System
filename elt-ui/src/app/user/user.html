@@ -1,15 +1,47 @@
-<h2>User Dashboard</h2>
-
-<!-- File input for YAML -->
-<input type="file" #fileInput accept=".yaml,.yml" />
-
-<!-- Action buttons -->
-<div style="margin-top: 10px;">
-  <button (click)="viewData(fileInput)">📊 View Uploaded Table Data</button>
-  <button (click)="fetchCoverage()">📈 View Test Coverage</button>
+<!-- Add particles container for background animation -->
+<body>
+<div class="logo-container">
+  <img src="ust_logo.png" alt="Logo" class="logo" />
 </div>
+<div class="particles" id="particles"></div>
 
-<!-- Show test coverage -->
+<div class="dashboard-container">
+    <h2>User Dashboard</h2>
+    
+    <div class="dashboard-grid">
+        <!-- File Upload Section -->
+        <div class="upload-section">
+            <h3 class="section-title">◦ Data Input Terminal</h3>
+            <!-- File input for YAML -->
+            <input type="file" #fileInput accept=".yaml,.yml" />
+        </div>
+
+        <!-- Actions Section -->
+        <div class="actions-section">
+            <h3 class="section-title">◦ Command Center</h3>
+            <!-- Action buttons -->
+            <div style="margin-top: 10px;">
+                <button (click)="viewData(fileInput)">📊 View Uploaded Table Data</button>
+                <button (click)="fetchCoverage()">📈 View Test Coverage</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Show test coverage -->
 <div *ngIf="coveragePercent !== null && coveragePercent !== undefined">
-  <p><strong>Backend Test Coverage:</strong> {{ coveragePercent }}%</p>
+  <p class="coverage-text">
+    <strong>Backend Test Coverage:</strong> {{ coveragePercent }}%
+  </p>
+
+  <div class="coverage-bar">
+    <div class="coverage-fill" [style.width.%]="coveragePercent"></div>
+  </div>
 </div>
+
+</div>
+
+<!-- Loading spinner (optional) -->
+<div class="loading" id="loading">
+    <div class="loading-spinner"></div>
+</div>
+</body>

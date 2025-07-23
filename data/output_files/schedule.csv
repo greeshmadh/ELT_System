@@ -1,43 +1,17 @@
 id,name,role
-1,Alice,Engineer
-2,Bob,Manager
-7,Alic2e,Engineer
-8,Bo2b,Manager
-8,Bo2b,Manager
-5,Eve,Designer
-6,Frank,Consultant
-3,Charlie,Analyst
-4,Diana,Scientist
-100,Alice,Engineer
-101,Bob,Manager
-102,Charlie,Analyst
-103,David,Designer
-145,Alice,Engineer
-245,Bob,Manager
-345,Charlie,Designer
-445,David,Analyst
-545,Eve,Developer
-645,Frank,Tester
-745,Grace,Architect
-845,Heidi,Product Owner
-945,Ivan,Scrum Master
-1045,Judy,Business Analyst
-1145,Karl,DevOps Engineer
-1245,Leo,Data Scientist
-1345,Mia,UX Designer
-1445,Nina,Content Strategist
-1545,Oscar,SEO Specialist
-1645,Paul,Marketing Manager
-1745,Quinn,Sales Executive
-1845,Rita,Customer Support
-1945,Sam,System Administrator
-147,Alice,Engineer
-247,Bob,Manager
-375,Charlie,Designer
-475,David,Analyst
-575,Eve,Developer
-675,Frank,Tester
-775,Grace,Architect
-8475,Heidi,Product Owner
-947,Ivan,Scrum Master
-1075,Judy,Business Analyst
+,Alice,
+,Bob,
+,Charlie,
+,Laptop,
+,Mouse,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+T1001,alice,success
+T1002,bob,failed
+T1003,charlie,success
+T1004,david,failed

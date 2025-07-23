@@ -1,2 +1,10 @@
-<h2>Logs</h2>
-<pre *ngFor="let log of logs">{{ log }}</pre>
+<body>
+<div class="logs-container">
+  <h2>Logs</h2>
+
+  <div *ngIf="logs.length === 0" class="no-logs">No logs available.</div>
+
+  <pre *ngFor="let log of logs" class="log-entry">{{ log }}</pre>
+</div>
+
+</body>

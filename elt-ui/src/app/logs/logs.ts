@@ -7,6 +7,7 @@ import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http'
   standalone: true,
   imports: [CommonModule, HttpClientModule],
   templateUrl: './logs.html',
+  styleUrls: ['./logs.css']
 })
 export class LogsComponent implements OnInit, OnDestroy {
   logs: string[] = [];

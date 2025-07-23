@@ -1,0 +1,32 @@
+/* Logs container */
+body {
+  background-color: #231F20; /* Soft black */
+  color: #FFFFFF;            /* White text */
+  margin: 0;
+  padding: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size:2rem;
+}
+
+/* Header */
+h2 {
+  color: #0097AC; /* Light teal */
+  border-bottom: 2px solid #006E74;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Log entries */
+pre {
+  background-color: #2e2e2e; /* Slightly lighter black for contrast */
+  color: #00FFCC; /* Teal-ish highlight for log text */
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #0097AC;
+  border-radius: 6px;
+  white-space: pre-wrap;       /* Wrap long lines */
+  word-break: break-word;
+  font-size: 1rem;
+  box-shadow: 0 0 8px rgba(0, 151, 172, 0.3);
+}

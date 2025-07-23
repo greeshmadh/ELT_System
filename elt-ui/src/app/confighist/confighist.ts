@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
   standalone: true,
   imports: [CommonModule, HttpClientModule],
   templateUrl: './confighist.html',
+  styleUrls: ['./confighist.css']
 })
 export class ConfigHistoryComponent implements OnInit {
   configs: any[] = [];

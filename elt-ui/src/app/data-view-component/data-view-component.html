@@ -1,16 +1,36 @@
-<div *ngIf="error" style="color: red;">
-  {{ error }}
+<body>
+
+<h2>Data View</h2>
+
+<!-- Error Message -->
+<div *ngIf="error" style="color: red;">{{ error }}</div>
+
+<!-- Search Bar -->
+<div *ngIf="rows.length > 0" style="margin-bottom: 10px;">
+  <input
+    type="text"
+    placeholder="Search..."
+    [(ngModel)]="searchTerm"
+    (input)="applyFilter()"
+  />
 </div>
 
-<table *ngIf="rows.length > 0" border="1">
+<!-- Data Table -->
+<table *ngIf="filteredRows.length > 0" border="1">
   <thead>
     <tr>
       <th *ngFor="let col of columns">{{ col }}</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let row of rows">
+    <tr *ngFor="let row of filteredRows">
       <td *ngFor="let col of columns">{{ row[col] }}</td>
     </tr>
   </tbody>
 </table>
+
+<!-- No result -->
+<div *ngIf="filteredRows.length === 0 && !error">
+  No matching results found.
+</div>
+</body>

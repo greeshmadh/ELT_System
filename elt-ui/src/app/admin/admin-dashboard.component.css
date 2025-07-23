@@ -1,26 +1,115 @@
-.dashboard-container {
-  max-width: 600px;
-  margin: 80px auto;
-  padding: 40px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  backdrop-filter: blur(10px);
-  color: #fff;
+/* Fullscreen black background */
+body {
+  background-color: #231F20; /* Soft black */
+  color: #FFFFFF;
+  margin: 0;
+  padding: 2rem;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem; /* Larger font globally */
 }
 
-button {
-  margin: 10px;
-  padding: 12px 24px;
+/* Logo container at top-left */
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+/* Logo image */
+.logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+
+/* Header */
+h2 {
+  color: #0097AC; /* Light teal */
+  border-bottom: 2px solid #006E74; /* Dark teal */
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+/* File input */
+input[type="file"] {
+  background-color: #231F20;
+  color: #FFFFFF;
+  border: 2px dashed #006E74;
+  padding: 1.2rem;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+/* Button grid container */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  justify-items: center;
+}
+
+/* Buttons */
+.button-grid button {
   background-color: #006E74;
-  color: white;
+  color: #FFFFFF;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: 1.5rem 2.5rem;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 0 14px rgba(0, 110, 116, 0.5);
+  transition: all 0.3s ease;
   cursor: pointer;
+}
+
+.button-grid button:hover {
+  background-color: #0097AC;
+  box-shadow: 0 0 18px rgba(0, 151, 172, 0.6);
+}
+
+/* General button fallback styling */
+button {
+  background-color: #006E74;
+  color: #FFFFFF;
+  border: none;
+  padding: 1.2rem 2rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(0, 110, 116, 0.5);
 }
 
 button:hover {
   background-color: #0097AC;
+  box-shadow: 0 0 18px rgba(0, 151, 172, 0.6);
+}
+
+/* Coverage info */
+.coverage-box {
+  background-color: #0097AC;
+  color: #231F20;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  box-shadow: 0 0 14px rgba(0, 151, 172, 0.3);
 }

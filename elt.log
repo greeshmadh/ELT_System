@@ -473,3 +473,104 @@
 2025-07-23 15:05:49,645 - INFO - Combined data shape: (42, 3)
 2025-07-23 15:05:49,647 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
 2025-07-23 15:05:49,652 - INFO - No new rows to load.
+2025-07-23 16:45:19,312 - INFO - Reading config from: ./uploaded_configs/c57be5b44b9c46f1852a86062c7ad728_testing2.yaml
+2025-07-23 16:45:19,346 - INFO - YAML config loaded successfully.
+2025-07-23 16:45:19,491 - INFO - Config already exists as version 16
+2025-07-23 16:45:19,493 - INFO - Starting ELT job...
+2025-07-23 16:45:19,541 - INFO - Read file1.json, rows: 2
+2025-07-23 16:45:19,547 - INFO - Read file2.json, rows: 3
+2025-07-23 16:45:19,553 - INFO - Read file3.txt, rows: 2
+2025-07-23 16:45:19,555 - INFO - Read file4.csv, rows: 2
+2025-07-23 16:45:19,558 - INFO - Read file5.json, rows: 4
+2025-07-23 16:45:19,572 - INFO - Read file6.json, rows: 19
+2025-07-23 16:45:19,576 - INFO - Read file7.json, rows: 10
+2025-07-23 16:45:19,576 - INFO - Total combined rows from local: 42
+2025-07-23 16:45:19,578 - WARNING - Unknown or skipped source type: api
+2025-07-23 16:45:19,579 - INFO - Combined data shape: (42, 3)
+2025-07-23 16:45:19,585 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 16:45:19,597 - INFO - CSV loaded with 42 rows and columns: ['id', 'name', 'role']
+2025-07-23 16:45:19,645 - INFO - Table 'testing2' created or already exists.
+2025-07-23 16:45:19,904 - INFO - Data successfully loaded into table 'testing2'.
+2025-07-23 16:45:19,906 - INFO - Loaded 42 new rows to DB.
+2025-07-23 16:45:19,908 - INFO - Started background watcher. Checking for updates every 60 seconds.
+2025-07-23 16:45:19,909 - INFO - Press 'g' then Enter to gracefully stop the job.
+2025-07-23 16:45:19,921 - INFO - Read file1.json, rows: 2
+2025-07-23 16:45:19,929 - INFO - Read file2.json, rows: 3
+2025-07-23 16:45:19,933 - INFO - Read file3.txt, rows: 2
+2025-07-23 16:45:19,936 - INFO - Read file4.csv, rows: 2
+2025-07-23 16:45:19,941 - INFO - Read file5.json, rows: 4
+2025-07-23 16:45:19,945 - INFO - Read file6.json, rows: 19
+2025-07-23 16:45:19,949 - INFO - Read file7.json, rows: 10
+2025-07-23 16:45:19,950 - INFO - Total combined rows from local: 42
+2025-07-23 16:45:19,950 - WARNING - Unknown or skipped source type: api
+2025-07-23 16:45:19,951 - INFO - Combined data shape: (42, 3)
+2025-07-23 16:45:19,953 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 16:45:19,965 - INFO - No new rows to load.
+2025-07-23 16:45:23,400 - INFO - Graceful shutdown signal received.
+2025-07-23 16:46:19,967 - INFO - ELT job completed and stopped.
+2025-07-23 17:28:12,989 - INFO - Reading config from: ./uploaded_configs/e66d54ff78ff4475b4b5b809e7459cef_testing2.yaml
+2025-07-23 17:28:12,994 - INFO - YAML config loaded successfully.
+2025-07-23 17:28:13,079 - INFO - Config already exists as version 16
+2025-07-23 17:28:13,079 - INFO - Starting ELT job...
+2025-07-23 17:28:13,129 - INFO - Read file1.json, rows: 2
+2025-07-23 17:28:13,135 - INFO - Read file2.json, rows: 3
+2025-07-23 17:28:13,144 - INFO - Read file3.txt, rows: 2
+2025-07-23 17:28:13,147 - INFO - Read file4.csv, rows: 2
+2025-07-23 17:28:13,152 - INFO - Read file5.json, rows: 4
+2025-07-23 17:28:13,187 - INFO - Read file6.json, rows: 19
+2025-07-23 17:28:13,196 - INFO - Read file7.json, rows: 10
+2025-07-23 17:28:13,198 - INFO - Total combined rows from local: 42
+2025-07-23 17:28:13,200 - WARNING - Unknown or skipped source type: api
+2025-07-23 17:28:13,202 - INFO - Combined data shape: (42, 3)
+2025-07-23 17:28:13,208 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 17:28:13,242 - INFO - CSV loaded with 42 rows and columns: ['id', 'name', 'role']
+2025-07-23 17:28:13,339 - INFO - Table 'testing2' created or already exists.
+2025-07-23 17:28:13,449 - INFO - Data successfully loaded into table 'testing2'.
+2025-07-23 17:28:13,451 - INFO - Loaded 42 new rows to DB.
+2025-07-23 17:28:13,454 - INFO - Started background watcher. Checking for updates every 60 seconds.
+2025-07-23 17:28:13,455 - INFO - Press 'g' then Enter to gracefully stop the job.
+2025-07-23 17:28:13,465 - INFO - Read file1.json, rows: 2
+2025-07-23 17:28:13,471 - INFO - Read file2.json, rows: 3
+2025-07-23 17:28:13,473 - INFO - Read file3.txt, rows: 2
+2025-07-23 17:28:13,476 - INFO - Read file4.csv, rows: 2
+2025-07-23 17:28:13,480 - INFO - Read file5.json, rows: 4
+2025-07-23 17:28:13,485 - INFO - Read file6.json, rows: 19
+2025-07-23 17:28:13,490 - INFO - Read file7.json, rows: 10
+2025-07-23 17:28:13,492 - INFO - Total combined rows from local: 42
+2025-07-23 17:28:13,492 - WARNING - Unknown or skipped source type: api
+2025-07-23 17:28:13,493 - INFO - Combined data shape: (42, 3)
+2025-07-23 17:28:13,495 - INFO - CSV written without schema validation to ./data/output_files/schedule.csv
+2025-07-23 17:28:13,509 - INFO - No new rows to load.
+2025-07-23 17:28:37,718 - INFO - Graceful shutdown signal received.
+2025-07-23 17:29:13,511 - INFO - ELT job completed and stopped.
+2025-07-23 18:03:58,550 - INFO - Reading config from: ./uploaded_configs/f7c3428e40d94fe78dc69d81bfadd02b_config_std_schema.yaml
+2025-07-23 18:03:58,555 - INFO - YAML config loaded successfully.
+2025-07-23 18:03:58,637 - INFO - Config already exists as version 5
+2025-07-23 18:03:58,637 - INFO - Starting ELT job...
+2025-07-23 18:03:58,669 - INFO - Read 1.csv, rows: 3
+2025-07-23 18:03:58,697 - INFO - Read 2.json, rows: 2
+2025-07-23 18:03:58,701 - INFO - Read 3.txt, rows: 3
+2025-07-23 18:03:58,704 - INFO - Read 4.csv, rows: 4
+2025-07-23 18:03:58,711 - INFO - Read 5.json, rows: 4
+2025-07-23 18:03:58,732 - INFO - Total combined rows from local: 16
+2025-07-23 18:03:58,733 - WARNING - Unknown or skipped source type: api
+2025-07-23 18:03:58,735 - INFO - Combined data shape: (16, 17)
+2025-07-23 18:03:58,750 - INFO - Validated and standardized CSV written to extracted_data_std_schema.csv
+2025-07-23 18:03:58,869 - INFO - CSV loaded with 16 rows and columns: ['id', 'name', 'role']
+2025-07-23 18:03:58,946 - INFO - Table 'config_w_schema_data_wo_schema' created or already exists.
+2025-07-23 18:03:59,004 - INFO - Data successfully loaded into table 'config_w_schema_data_wo_schema'.
+2025-07-23 18:03:59,006 - INFO - Loaded 16 new rows to DB.
+2025-07-23 18:03:59,007 - INFO - Started background watcher. Checking for updates every 60 seconds.
+2025-07-23 18:03:59,008 - INFO - Press 'g' then Enter to gracefully stop the job.
+2025-07-23 18:03:59,013 - INFO - Read 1.csv, rows: 3
+2025-07-23 18:03:59,025 - INFO - Read 2.json, rows: 2
+2025-07-23 18:03:59,028 - INFO - Read 3.txt, rows: 3
+2025-07-23 18:03:59,031 - INFO - Read 4.csv, rows: 4
+2025-07-23 18:03:59,038 - INFO - Read 5.json, rows: 4
+2025-07-23 18:03:59,043 - INFO - Total combined rows from local: 16
+2025-07-23 18:03:59,044 - WARNING - Unknown or skipped source type: api
+2025-07-23 18:03:59,046 - INFO - Combined data shape: (16, 17)
+2025-07-23 18:03:59,052 - INFO - Validated and standardized CSV written to extracted_data_std_schema.csv
+2025-07-23 18:03:59,057 - INFO - No new rows to load.
+2025-07-23 18:04:12,397 - INFO - Graceful shutdown signal received.
+2025-07-23 18:04:59,059 - INFO - ELT job completed and stopped.

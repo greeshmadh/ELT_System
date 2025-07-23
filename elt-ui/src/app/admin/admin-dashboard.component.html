@@ -1,18 +1,25 @@
+<body>
+  <!-- Logo -->
+<div class="logo-container">
+  <img src="ust_logo.png" alt="Logo" class="logo" />
+</div>
+
 <h2>Admin Dashboard</h2>
 
 <!-- File input -->
 <input type="file" #fileInput accept=".yaml,.yml" />
 
-<!-- Buttons -->
-<div style="margin-top: 10px;">
+<!-- Button Grid Container -->
+<div class="button-grid">
   <button (click)="triggerJob(fileInput)">Upload & Trigger ELT Job</button>
   <button (click)="viewLogs()">View Logs</button>
   <button (click)="viewHistory()">View Config History</button>
   <button (click)="viewData(fileInput)">📊 View Uploaded Table Data</button>
   <button (click)="fetchCoverage()">📈 View Test Coverage</button>
-  <div *ngIf="coveragePercent">
+</div>
+
+<!-- Coverage display -->
+<div *ngIf="coveragePercent" class="coverage-box">
   <p><strong>Backend Test Coverage:</strong> {{ coveragePercent }}%</p>
 </div>
-
-
-</div>
+</body>

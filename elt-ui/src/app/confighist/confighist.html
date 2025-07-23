@@ -1,4 +1,4 @@
-<h2>Uploaded Config History</h2>
+<body><h2>Uploaded Config History</h2>
 
 <table border="1" style="width: 100%; border-collapse: collapse;">
   <thead>
@@ -30,7 +30,8 @@
 <!-- Show full YAML below the table when a config is selected -->
 <div *ngIf="selectedConfig" style="margin-top: 30px;">
   <h3>Full YAML (Version {{ selectedConfig.version }})</h3>
-  <pre style="background-color: #f8f8f8; padding: 15px; border: 1px solid #ccc; white-space: pre-wrap;">
+  <pre style="background-color: #006E74; padding: 15px; border: 1px solid #ccc; white-space: pre-wrap;">
     {{ selectedConfig.yaml_content }}
   </pre>
 </div>
+</body>
