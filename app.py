@@ -15,7 +15,7 @@ from tenacity import retry, stop_after_attempt, wait_fixed, RetryError
 app = Flask(__name__)
 
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
-app.config["JWT_SECRET_KEY"] = "your-secret-key"  # use env var in production
+app.config["JWT_SECRET_KEY"] = "your-secret-key" 
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
 jwt = JWTManager(app)
 
@@ -104,7 +104,7 @@ def get_single_config(config_id):
 def get_logs():
     try:
         with open("elt.log", "r") as f:
-            lines = f.readlines()[-100:]  # return last 100 lines
+            lines = f.readlines()[-100:]  # returns last 100 lines
         return jsonify({"logs": lines})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -132,7 +132,7 @@ def login():
     if not user or user["password"] != password:
         return jsonify({"error": "Invalid credentials"}), 401
 
-    token = create_access_token(identity=username)  # ✅ identity is now a string
+    token = create_access_token(identity=username)
     return jsonify({"token": token, "role": user["role"]})
 
 @app.route('/data-view', methods=['POST'])
@@ -155,7 +155,7 @@ def data_view_from_uploaded_yaml():
             file_path = os.path.join(UPLOAD_FOLDER, unique_name)
             file.save(file_path)
 
-            # Read YAML to get DB/table info
+            # Read YAML to get DB and table info
             with open(file_path, 'r') as f:
                 config = yaml.safe_load(f)
 
@@ -208,7 +208,7 @@ def trigger_job():
         return jsonify({"error": "Invalid file format"}), 400
 
 @app.route('/coverage-report', methods=['GET'])
-@jwt_required()  # Optional: secure it
+@jwt_required()
 def get_coverage_report():
     try:
         with open("coverage.json", "r") as f:

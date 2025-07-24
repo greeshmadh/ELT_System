@@ -2,16 +2,17 @@ main point - logging
 
 try - realtime and cloud platform
 try sfpt real 
+try schedular must run even when laptop switch off 
 
 backend:-
-schedular must run even when laptop switch off 
+mock sftp
 README file
-unit testing - frontend
 REMOVE Unwanted and redundant code after presenattion
 coverage inc
 
 frontend:-
 Stop button
+unit testing - frontend
 
 learn:-
 Angular works how flow

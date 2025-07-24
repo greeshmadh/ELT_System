@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   imports: [RouterModule, CommonModule],
 })
 export class AdminDashboardComponent {
-  coveragePercent: string | null = null;  // ✅ Add this to track coverage display
+  coveragePercent: string | null = null;  
 
   constructor(private http: HttpClient) {}
 
@@ -81,7 +81,7 @@ export class AdminDashboardComponent {
     this.http.get<any>('http://localhost:5000/coverage-report', { headers }).subscribe({
       next: (res) => {
         const summary = res.totals?.percent_covered_display;
-        this.coveragePercent = summary ?? "N/A";  // ✅ Fallback if undefined
+        this.coveragePercent = summary ?? "N/A";  
         alert(`Test Coverage: ${this.coveragePercent}%`);
       },
       error: (err) => {

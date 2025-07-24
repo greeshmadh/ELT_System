@@ -11,7 +11,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Database setup
 engine = create_engine('postgresql://elt_user:elt_password@localhost:5432/elt_db')
-metadata = MetaData()#MetaData is a container object that holds information about tables.
+metadata = MetaData() #MetaData is a container object that holds information about tables.
 
 # Config history table
 config_history = Table('config_history', metadata,
@@ -20,7 +20,7 @@ config_history = Table('config_history', metadata,
     Column('timestamp', DateTime),
     Column('yaml_content', Text)
 )
-metadata.create_all(engine)#This creates the table in the elt_db PostgreSQL database if it doesn't already exist.
+metadata.create_all(engine) #This creates the table in the elt_db PostgreSQL database if it doesn't already exist.
 
 @app.route('/upload-config', methods=['POST'])
 def upload_config():
@@ -63,12 +63,10 @@ def upload_config():
 if __name__ == "__main__":
     app.run(port=5055)
 
-
-# Add at the bottom of config_manager.py
 def upload_if_new_config(yaml_path):
     with open(yaml_path, 'r') as f:
         new_content = f.read()
-        parsed_yaml = yaml.safe_load(new_content)  # validate syntax
+        parsed_yaml = yaml.safe_load(new_content)
 
     engine = create_engine('postgresql://elt_user:elt_password@localhost:5432/elt_db')
     metadata = MetaData()

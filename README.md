@@ -27,7 +27,7 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
 - Configuration is managed through a `config.yaml` file.
 - Defines data sources (`local`, `api`) and target PostgreSQL DB credentials.
 - Optional `schema` section defines expected column names and types.
-- Supports `strict_mode` for schema validation.
+- Supports `strict_mode` for schema validation. If 'True' follows the mentioned schema else loads all data rows.
 - You can optionally define:
   - `start_time`: when the ELT job should start (format: `YYYY-MM-DD HH:MM`)
   - `end_time`: when the job should stop (monitoring ends)
@@ -97,7 +97,7 @@ Provides a web-based UI to manage the ELT pipeline.
 
 - **Endpoint**: `GET /logs`
 - Returns the **last 100 lines** from the ELT log file (`elt.log`).
-- Used in the frontend to show real-time monitoring (with auto-refresh every 5 seconds).
+- Used in the frontend to show real-time monitoring (with auto-refresh every 10 seconds).
 - Log entries include:
   - Timestamp
   - ELT Job status
@@ -131,7 +131,7 @@ A simplified dashboard tailored for **non-admin users**.
 
 > Ideal for analysts or data consumers who need visibility but not full ELT control.
 
-### Test Coverage Report
+### 13. Test Coverage Report
 
 - A backend route `/coverage-report` serves the parsed JSON coverage summary.
 - The coverage report includes:
@@ -143,7 +143,7 @@ A simplified dashboard tailored for **non-admin users**.
 -----
 
 
-Dependencies
+## Dependencies:-
 
 Python 3.8+
 

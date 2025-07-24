@@ -5,12 +5,10 @@ import pandas as pd
 import requests
 from tenacity import retry, stop_after_attempt, wait_fixed
 from pandas.api.types import is_dtype_equal
-import json  # Added import for json
+import json  
 
 # ---------- CONFIG ----------
-CONFIG_PATH = "config_std_schema.yaml"
-
-# Define the output folder
+CONFIG_PATH = "./uploaded_configs/config_std_schema.yaml"
 OUTPUT_FOLDER = "./data/output_files"
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
@@ -152,6 +150,5 @@ def run_extraction(config=None, output_csv_path=None, skip_api=False):
             logging.info(f"CSV written without schema validation to {raw_path}")
 
 
-# ---------- ENTRY POINT ----------
 if __name__ == "__main__":
     run_extraction()

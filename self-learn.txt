@@ -31,3 +31,18 @@ ng serve
 coverage run -m pytest tests/
 coverage json -o coverage.json
 see this in frontend by having a app.py route and a button in frontend
+
+
+---pytest 
+Pytest fixtures are functions that can be used to manage our apps states and dependencies. Most importantly, 
+they can provide data for testing and a wide range of value types when explicitly called by our testing software. 
+You can use the mock data that fixtures create across multiple tests
+
+Smoke testing, in the context of software development, refers to a type of preliminary software testing 
+that verifies the core functionalities of a new software build. It's a quick, high-level check to ensure 
+that the basic features work as expected before more in-depth testing begins. 
+Think of it as a "sanity check" to confirm the build is stable enough for further testing
+
+--Extra 
+SHA-256 produces a fixed-size, 256-bit (32-byte) output, regardless of the input data's size. 
+This output, also known as a hash, is a unique fingerprint of the input.

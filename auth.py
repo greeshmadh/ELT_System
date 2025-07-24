@@ -8,7 +8,6 @@ app.config["JWT_ACCESS_TOKEN_EXPIRES"] = timedelta(hours=1)
 
 jwt = JWTManager(app)
 
-# ✅ mock users
 USERS = {
     "admin": {"password": "admin123", "role": "admin"},
     "user": {"password": "user123", "role": "user"}
