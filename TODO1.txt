@@ -1,11 +1,9 @@
 main point - logging
 
-try - realtime and cloud platform
-try sfpt real 
+try - realtime and cloud platform 
 try schedular must run even when laptop switch off 
 
 backend:-
-mock sftp
 README file
 REMOVE Unwanted and redundant code after presenattion
 coverage inc
@@ -44,3 +42,5 @@ BEAUTIFY FRONTEND - all pages
 user side - filter and search 
 admin has more privilagfes than user
 coverage report of the project backend in the frontend it should show
+try sfpt real
+mock sftp

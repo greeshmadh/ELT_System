@@ -35,7 +35,7 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
   - A **single CSV file** (remote path points to file)
 - Automatically combines downloaded CSVs into a single DataFrame.
 - Saves results directly to the configured `output_csv_path`
-- **Run along with Local extraction**
+- **Can be ran along with Local extraction**
 
 **YAML Example for Single File:**
 ```yaml
