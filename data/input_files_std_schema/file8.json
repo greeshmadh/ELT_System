@@ -1,3 +1,4 @@
 [
-    {"id": 1, "name": "Alvfvice", "age": 30, "city": "New York"}
+    {"id": 1, "name": "Alvfvice", "age": 30, "city": "New York"},
+    {"id": 2, "name": "Bob", "age": 25, "city": "Los Angeles"}
 ]

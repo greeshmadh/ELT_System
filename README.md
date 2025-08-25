@@ -3,6 +3,7 @@
 This project implements a complete ELT (Extract, Load, Transform) pipeline with support for:
 
 - Local data extraction
+- SFTP file extraction
 - YAML configuration management with versioning
 - Schema validation and standardization
 - PostgreSQL loading
@@ -21,6 +22,32 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
 - **API Extraction**: Fetches JSON data from an API endpoint using optional authentication tokens.
 - **Combined Output**: All extracted data is concatenated into one DataFrame and written to CSV.
 - Automatically re-extracts all files on change detection during monitoring.
+
+### 1.0 **SFTP Extraction Support**
+- Implemented sftp server via docker 
+    docker run -p 2222:22 -d atmoz/sftp foo:pass:::upload
+    Next time start here :
+      sftp -P 2222 foo@localhost
+      put your_test.csv /upload/sample.csv
+    This uploads a file to the sftp server. 
+- Added ability to connect to an SFTP server via credentials provided in YAML.
+- Supports downloading:
+  - A **single CSV file** (remote path points to file)
+- Automatically combines downloaded CSVs into a single DataFrame.
+- Saves results directly to the configured `output_csv_path`
+- **Run along with Local extraction**
+
+**YAML Example for Single File:**
+```yaml
+sources:
+  - type: sftp
+    sftp:
+      host: "localhost"
+      port: 2222
+      username: "foo"
+      password: "pass"
+      remote_path: "/upload/sample.csv"
+
 
 
 ### 2. **YAML Configuration**
@@ -44,6 +71,7 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
 - Appends data to the specified(in yaml) target table.
 - Supports retry mechanism for fault-tolerance.
 - Only new rows are inserted using a row-level hash to prevent duplicates.
+- If yaml previously uploaded and data from sources not changed then no new data(duplicates) is added.
 - Users can preview database table content before running the ELT job using a YAML config.
 
 ### 5. **YAML Upload and Versioning**
@@ -51,6 +79,7 @@ This project implements a complete ELT (Extract, Load, Transform) pipeline with 
 - Accepts YAML files and stores them in a `config_history` table in the database.
 - Automatically increments version number.
 - Validates YAML syntax before storing.
+- If yaml already exists in table doesn't upload but uses the same. 
 
 ### 6. **Manual & Scheduled ELT Trigger with Monitoring**
 - Script: `scheduleAndManual.py`
@@ -166,6 +195,8 @@ APScheduler
 watchdog
 
 hashlib (built-in)
+
+paramiko
 
 
 

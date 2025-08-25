@@ -7,6 +7,10 @@ PROBS I FACED:-
    without running elt job also yaml should be read and data loaded in frontend. 
    Sol:- Sent the fileinput from admin dashboard to view data function button click. So yaml file sent on api call 
    POST data-view. 
+5. While implementing sftp the code was showing error as extracted data to csv the csv was empty. But the upload 
+   of file from docker to sftp server was correct. So ran only extract file to see what is error. The yaml file 
+   was read but no output so realised that yaml structure for sftp is different. so changed that using ai and code worked !
+   
 
 
 EXCEPTIONS IN PROJ:-

@@ -13,8 +13,8 @@ from config_manager import upload_if_new_config
 from logger import logger
 
 # Set config and output file paths
-CONFIG_PATH = sys.argv[1] if len(sys.argv) > 1 else "./uploaded_configs/testing.yaml"
-CSV_PATH = "./data/output_files/schedule.csv"
+CONFIG_PATH = sys.argv[1] if len(sys.argv) > 1 else "./uploaded_configs/SFTP.yaml"
+CSV_PATH = "./data/output_files/sftp_final1.csv"
 
 # Store inserted row hashes to avoid duplication
 inserted_hashes = set()
